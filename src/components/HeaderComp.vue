@@ -32,8 +32,8 @@
                 </div>
             </nav> -->
             <nav class="container-fluid navbar navbar-expand-lg navbar-dark d-flex justify-content-between">
-                <div class="p-3">
-                    <img src="" alt="">
+                <div class="">
+                    <img src="../../public/logo-boolbnb.png" alt="logo">
                     <a class="navbar-brand text-first-primary fw-bold" href="#">BOOLBNB</a>
                 </div>
                 <div class="text-white">
@@ -43,14 +43,8 @@
                     </button>
                     <div class="collapse navbar-collapse text-white" id="navbarNavDropdown">
                         <ul class="navbar-nav">
-                            <li class="nav-item active text-white">
-                                <a class="p-3 text-white" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="p-3 text-white" href="#">Apartments</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="p-3 text-white" href="#">Developers</a>
+                            <li class="nav-item" v-for="item in menu" :key="item.routeName">
+                                <router-link :to="{ name: item.routeName }" class="nav-link" active-class="active"> {{ item.label }} </router-link>
                             </li>
                         </ul>
                     </div>
@@ -88,7 +82,25 @@
 
 <script>
 export default {
-    name: '',
+    name: 'HeaderComp',
+    data() {
+        return {
+            menu: [
+                {
+                    label: 'Home',
+                    routeName: 'home'
+                },
+                {
+                    label: 'Apartments',
+                    routeName: 'apartments'
+                },
+                {
+                    label: 'Developers',
+                    routeName: 'developers'
+                },
+            ]
+        }
+    }
 }
 </script>
 
@@ -114,5 +126,7 @@ a{
     }
 }
 
-
+img{
+    height: 60px;
+}
 </style>
