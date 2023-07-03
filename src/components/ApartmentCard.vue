@@ -9,15 +9,20 @@
                 <img class="img-fluid" src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
                 <!-- <img :src="getImagePath" :alt="product.name"> -->
             </div>
-            <div class="card-body d-flex justify-content-between align-items-end">
+            <div class="card-body justify-content-between align-items-end">
                 <div>
                     <h6>luogo</h6>
                     <span>stanze</span>
                     <span> | </span>
                     <span>letti</span>
                     <p>Price: &euro;</p>
+                    
                     <!-- <h6>{{ product.brand.name }}</h6>
                     <span>{{ product.category.name }}</span> -->
+                </div>
+                <div class="card-text">
+                    <button class="btn btn-primary text-white">Show the apartment</button>
+                    <!-- <router-link :to="{name: 'single-project', params:{slug: project.slug}}" class="btn btn-primary">Show the apartment</router-link> -->
                 </div>
                 <!-- <div class="card-text">
                     <p>
