@@ -1,6 +1,6 @@
 <template>
   <div>
-    ciao
+
   </div>
   <RouterView></RouterView>
 </template>
