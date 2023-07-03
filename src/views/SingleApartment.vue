@@ -1,6 +1,10 @@
 <template>
     <div>
-        SingleApartment
+        <div class="immagine">a</div>
+        <div class="descrizione">b</div>
+        <div class="servizi">c</div>
+        <div class="preview">d</div>
+        <div class="calendario">e</div>
     </div>
 </template>
 
