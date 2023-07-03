@@ -8,7 +8,7 @@
 
 <!-- carosello -->
 
-<h2 class="text-capitalize">maps</h2>
+<h2 class="text-capitalize">map</h2>
 
 <!-- mappa -->
 
