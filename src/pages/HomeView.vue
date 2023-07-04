@@ -1,8 +1,11 @@
 <template>
   <div class="">
-    <div class="jumbotron">
+    <div class="jumbotron position-relative">
       <img class="img-fluid" src="img\2008720-bellissimo-paesaggio-urbano-di-kobe-citta-giappone-gratuito-foto.jpg"
         alt="jumbo">
+
+
+
     </div>
   </div>
   <!-- carosello -->
@@ -14,6 +17,8 @@
     <h2 class="text-capitalize my-3">maps</h2>
 
     <!-- mappa -->
+    <!-- 
+    <MapComp /> -->
   </div>
 </template>
 
@@ -21,11 +26,14 @@
 
 <script>
 import Carousel from '../components/Carousel.vue';
+import MapComp from '../components/MapComp.vue';
 export default {
   name: 'HomeView',
 
   components: {
-    Carousel
+    Carousel,
+    MapComp,
+
   }
 }
 </script>
