@@ -1,12 +1,24 @@
 <template>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+
+       
+
         <div class="card shadow mb-3">
-            <div class="card-title">
+
+            <div class="card-title p-3">
+
+
+
                 <!-- <h3>{{ product.name }}</h3> -->
                 <h3>NOME APPARTAMENTO</h3>
             </div>
             <div class="card-img-top">
+
+                <img class="img-fluid"
+                    src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
+
                 <img class="img-fluid" src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
+
                 <!-- <img :src="getImagePath" :alt="product.name"> -->
             </div>
             <div class="card-body justify-content-between align-items-end">
