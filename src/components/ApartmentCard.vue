@@ -1,7 +1,7 @@
 <template>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card shadow mb-3">
-            <div class="card-title">
+            <div class="card-title p-3">
                 <!-- <h3>{{ product.name }}</h3> -->
                 <h3>NOME APPARTAMENTO</h3>
             </div>
