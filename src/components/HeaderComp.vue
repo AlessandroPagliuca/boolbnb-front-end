@@ -44,7 +44,7 @@
                     <div class="collapse navbar-collapse text-white" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item" v-for="item in menu" :key="item.routeName">
-                                <router-link :to="{ name: item.routeName }" class="nav-link" active-class="active"> {{ item.label }} </router-link>
+                                <router-link :to="{ name: item.routeName }" class="nav-link mx-2" active-class="active text-decoration-primary"> {{ item.label }} </router-link>
                             </li>
                         </ul>
                     </div>
@@ -120,10 +120,13 @@ export default {
 }
 
 a{
-    text-decoration: none;
-    &:hover{
-        text-decoration: underline $primary 2px;
-    }
+    border-bottom: transparent 3px inset;
+    
+}
+
+.text-decoration-primary {
+    border-bottom: $primary 3px inset;
+    
 }
 
 img{
