@@ -18,7 +18,7 @@ const teams= [
       role: "Junior Full Stack Web Developer",
       link: "https://www.linkedin.com/in/giuseppe-indomenico-29560914b/",
       link2: "https://github.com/GiuseppeIndomenico",
-      profile_img: "/public/team/giuseppe.jpeg",
+      profile_img: "/public/team/giuseppe3.jpeg",
     },
     {
       name: "Giovanni Speranza",
@@ -32,7 +32,7 @@ const teams= [
       role: "Junior Front-end Developer",
       link: " https://www.linkedin.com/in/arianna-drovandi-562990230/",
       link2: "https://github.com/ariannadrovandi",
-      profile_img: "/public/team/arianna.jpeg",
+      profile_img: "/public/team/arianna4.png",
     },
     {
       name: "Anas Hamimi ",

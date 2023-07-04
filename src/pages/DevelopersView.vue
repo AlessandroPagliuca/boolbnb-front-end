@@ -16,9 +16,9 @@
               <p class="fw-semibold">{{ team.role }}</p>
               <hr />
               <div class="d-flex">
-                <a class=" fw-semibold" href="{{ team.link }}">Linkedin</a>
-              <p class="px-1">|</p>
-              <a class=" fw-semibold" href="{{ team.link }}">Github</a>
+                <a class=" fw-semibold" href="{{ team.link }}">Linkedin <i class="fa-brands fa-linkedin text-black"></i> </a>
+              <p class="px-1"> | </p>
+              <a class=" fw-semibold" href="{{ team.link }}">Github <i class="fa-brands fa-github text-black"></i></a>
               </div>
 
 
