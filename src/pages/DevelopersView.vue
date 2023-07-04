@@ -29,15 +29,20 @@
       </div>
     </div>
   </div>
+  <!-- <CreditCard/> -->
 
 </template>
 
 <script>
 import { teams } from "../data/data";
+import CreditCard from "../components/CreditCard.vue";
 
 
 export default {
   name: "DevelopersView",
+  components:{
+    CreditCard
+  },
   data() {
     return {
       teams,
