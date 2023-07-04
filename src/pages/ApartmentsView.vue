@@ -1,8 +1,17 @@
 <template>
     <div class="body overflow-auto">
         <div class="container">
-            <h1 class="text-black">{{ title }}</h1>
+            <h1 class="text-black my-5">{{ title }}</h1>
             <div class="row mb-4">
+                <ApartmentCard />
+                <ApartmentCard />
+                <ApartmentCard />
+                <ApartmentCard />
+                <ApartmentCard />
+                <ApartmentCard />
+                <ApartmentCard />
+                <ApartmentCard />
+                <ApartmentCard />
                 <ApartmentCard />
                 <!-- <ApartmentCard v-for="(project, index) in projects" :key="project.id" :project="project"/> -->
             </div>

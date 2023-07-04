@@ -124,8 +124,9 @@ a{
     
 }
 
-.text-decoration-primary{
+.text-decoration-primary {
     border-bottom: $primary 3px inset;
+    
 }
 
 img{
