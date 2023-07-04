@@ -5,19 +5,28 @@
         alt="jumbo">
     </div>
   </div>
-  <h2 class="text-capitalize">featured apartments</h2>
   <!-- carosello -->
+  <div class="container-fluid  px-5 ">
+    <h2 class="text-capitalize my-3">featured apartments</h2>
 
-  <h2 class="text-capitalize">maps</h2>
+    <Carousel />
 
-  <!-- mappa -->
+    <h2 class="text-capitalize my-3">maps</h2>
+
+    <!-- mappa -->
+  </div>
 </template>
 
 
 
 <script>
+import Carousel from '../components/Carousel.vue';
 export default {
   name: 'HomeView',
+
+  components: {
+    Carousel
+  }
 }
 </script>
 
