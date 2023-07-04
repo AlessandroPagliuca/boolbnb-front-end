@@ -14,7 +14,8 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quis inventore minus unde reprehenderit voluptas vero repudiandae consequatur laudantium suscipit et veniam, soluta quo possimus quae laborum distinctio alias maiores!</p>
                     </div>
                     <div class="services-box">
-                        <div class="row mb-3">
+                        <h4>Servizi</h4>
+                        <div class="row mt-1 mb-3">
                             <div class="col-6">servizio 1</div>
                             <div class="col-6">servizio 1</div>
                             <div class="col-6">servizio 1</div>
