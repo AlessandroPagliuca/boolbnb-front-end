@@ -29,17 +29,15 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
 import { teams } from "../data/data";
-// import DevelopersView from "../components/DevelopersView.vue";
+
 
 export default {
   name: "DevelopersView",
-  // components: {
-  //   DevelopersView,
-  // },
   data() {
     return {
       teams,
