@@ -1,11 +1,19 @@
 <template>
     <DatePicker v-model="range" mode="dateTime" :columns="2" is-range>
         <template v-slot="{inputValue, inputEvents}">
-            <div class="group">
-                <label class="button groupItem" butto for="start">Check-in</label>
-                <input type="text" id="start" :value="inputValue.start" v-on="inputEvents.start" class="input groupItem">
-                <label class="button groupItem" for="end">Check-out</label>
-                <input type="text" id="end" :value="inputValue.end" readonly class="input groupItem">
+            <div class="group d-flex flex-row p-3">
+                <div class="left border-end border-1">
+                    <div class="check-in text-center d-flex flex-column me-5 my-3">
+                        <label class="button groupItem" button for="start">Check-in</label>
+                        <input type="text" id="start" :value="inputValue.start" v-on="inputEvents.start" class="input groupItem">
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="check-out text-center d-flex flex-column ms-5 my-3">
+                        <label class="button groupItem" for="end">Check-out</label>
+                        <input type="text" id="end" :value="inputValue.end" readonly class="input groupItem">
+                    </div>
+                </div>
             </div>
         </template>
 
@@ -26,4 +34,6 @@ const range = reactive({
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>
