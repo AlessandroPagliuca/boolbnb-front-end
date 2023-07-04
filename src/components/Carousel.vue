@@ -1,6 +1,6 @@
 <template>
-    <swiper :slidesPerView="1" :spaceBetween="10" :cssMode="true" :navigation="true" :mousewheel="true" :keyboard="true"
-        :modules="modules" :loop="true" :autoplay="{
+    <swiper :slidesPerView="1" :spaceBetween="10" navigation :modules="modules" :loop="true" @swiper="onSwiper"
+        @slideChange="onSlideChange" :autoplay="{
             delay: 5000,
             disableOnInteraction: false,
         }" :pagination="{
@@ -326,7 +326,7 @@ import 'swiper/css/bundle';
 
 
 // import required modules
-import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay, Scrollbar, A11y } from 'swiper/modules';
 
 export default {
     components: {
@@ -334,11 +334,46 @@ export default {
         SwiperSlide,
     },
     setup() {
+        const onSwiper = (swiper) => {
+            console.log(swiper);
+        };
+        const onSlideChange = () => {
+            console.log('slide change');
+        };
         return {
-            modules: [Autoplay, Navigation, Pagination, Mousewheel, Keyboard],
+            onSwiper,
+            onSlideChange,
+            modules: [Autoplay, Navigation, Pagination, Mousewheel, Keyboard, Scrollbar, A11y],
 
         };
     },
 };
 </script>
+
+<style>
+.mySwiper .swiper-pagination-bullet {
+    background-color: #ff385c;
+
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+    padding: 2rem;
+    transition: all .5s;
+    border-radius: 50%;
+
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: rgba(255, 255, 255, 0.9);
+    /* box-shadow: 1px 1px 12px 6px rgba(255, 255, 255, 0.4); */
+    box-shadow: 1px 1px 12px 6px rgba(0, 0, 0, 0.4);
+}
+</style>
+
   
