@@ -151,7 +151,7 @@ li{
 
 .active {
     border-bottom: $primary 3px inset;
-    color: $primary;
+    // color: $primary;
 
 
 }
