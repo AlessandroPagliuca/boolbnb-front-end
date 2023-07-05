@@ -31,13 +31,12 @@
                     </ul>
                 </div>
             </nav> -->
-            <nav
-                class="container-fluid navbar navbar-expand-lg navbar-dark d-flex justify-content-between fixed-top bg-black">
+            <nav class="container-fluid navbar navbar-expand-lg navbar-dark d-flex justify-content-between fixed-top bg-black top-nav">
                 <div class="">
                     <img src="/logo-boolbnb.png" alt="logo">
                     <a class="navbar-brand text-first-primary fw-bold" href="#">BOOLBNB</a>
                 </div>
-                <div class="text-white">
+                <!-- <div class="text-white">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon text-white"></span>
@@ -50,9 +49,38 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
+                <!-- <section class="top-nav"> -->
+
+                <input id="menu-toggle" type="checkbox" />
+                <label class='menu-button-container' for="menu-toggle">
+                    <div class='menu-button'></div>
+                </label>
+                <ul class="menu">
+                    <li class="nav-item" v-for="item in menu" :key="item.routeName">
+                        <router-link :to="{ name: item.routeName }" class="nav-link mx-2"
+                            active-class="active"> {{ item.label }} </router-link>
+                    </li>
+                </ul>
+            <!-- </section> -->
 
             </nav>
+            <!-- <section class="top-nav">
+                <div>
+                    Logo Here
+                </div>
+                <input id="menu-toggle" type="checkbox" />
+                <label class='menu-button-container' for="menu-toggle">
+                    <div class='menu-button'></div>
+                </label>
+                <ul class="menu">
+                    <li class="nav-item" v-for="item in menu" :key="item.routeName">
+                        <router-link :to="{ name: item.routeName }" class="nav-link mx-2"
+                            active-class="active text-decoration-primary"> {{ item.label }} </router-link>
+                    </li>
+                </ul>
+            </section> -->
+
             <!-- <nav class="navbar navbar-expand-md ">
             <div class="container">
                 <a class="navbar-brand text-uppercase text-white" href="#">Start Bootstrap</a>
@@ -117,12 +145,14 @@ export default {
     background-color: $primary;
 }
 
-.navbar-toggler {
+li{
     color: white;
 }
 
-a {
-    border-bottom: transparent 3px inset;
+.active {
+    border-bottom: $primary 3px inset;
+    color: $primary;
+
 
 }
 
