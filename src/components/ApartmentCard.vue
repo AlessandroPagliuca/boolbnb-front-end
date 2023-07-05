@@ -4,47 +4,23 @@
 
 
         <div class="card shadow mb-3">
-
-            <div class="card-title p-3">
-
-
-
-                <!-- <h3>{{ product.name }}</h3> -->
-                <h3>NOME APPARTAMENTO</h3>
-            </div>
             <div class="card-img-top">
 
-                <img class="img-fluid"
-                    src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
-
-
-                <!-- <img :src="getImagePath" :alt="product.name"> -->
+                <img class="img-fluid" v-if="apartment.main_img.includes('http')" :src="apartment.main_img" alt="">
+                <img class="img-fluid" v-else :src="getImagePath" :alt="apartment.title">
             </div>
             <div class="card-body justify-content-between align-items-end">
                 <div>
-                    <h6>luogo</h6>
-                    <span>stanze</span>
+                    <h6>{{ apartment.title }}</h6>
+                    <span>rooms :{{ apartment.rooms }}</span>
                     <span> | </span>
-                    <span>letti</span>
-                    <p>Price: &euro;</p>
-
-                    <!-- <h6>{{ product.brand.name }}</h6>
-                    <span>{{ product.category.name }}</span> -->
+                    <span>beds :{{ apartment.beds }}</span>
+                    <p>{{ apartment.price }}: &euro;</p>
                 </div>
                 <div class="card-text">
-                    <button class="btn btn-primary text-white">Show the apartment</button>
-                    <!-- <router-link :to="{name: 'single-project', params:{slug: project.slug}}" class="btn btn-primary">Show the apartment</router-link> -->
+                    <router-link :to="{ name: 'single-apartment', params: { slug: apartment.slug } }"
+                        class="btn btn-primary">Show the apartment</router-link>
                 </div>
-                <!-- <div class="card-text">
-                    <p>
-                         <a href="#" class="btn btn-primary">Go somewhere</a> 
-                        <router-link :to="{ name: 'single-product', params: { slug: product.slug } }"
-                            class="btn btn-primary">View
-                        </router-link>
-                    </p>
-                    Price: {{ product.price || 0 }} &euro;
-                </div> -->
-
             </div>
         </div>
     </div>
@@ -54,7 +30,7 @@
 import { store } from '../store';
 export default {
     name: 'ApartmentCard',
-    props: ['product'],
+    props: ['apartment'],
     data() {
         return {
             store
@@ -62,7 +38,7 @@ export default {
     },
     computed: {
         getImagePath() {
-            return store.imgBasePath + this.product.cover_image;
+            return store.imgBasePath + this.apartment.main_img;
         }
     }
 }

@@ -63,8 +63,8 @@ const router = createRouter({
         },
 
         {
-            path: '/apartments/:slug',
-            name: 'single-apartments',
+            path: '/apartment/:slug',
+            name: 'single-apartment',
             component: () => import('../pages/SingleApartment.vue')
         },
 
