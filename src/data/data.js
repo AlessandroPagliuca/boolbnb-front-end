@@ -11,7 +11,7 @@ const teams= [
       role: "Junior Full Stack Web Developer",
       link: "https://www.linkedin.com/in/francesco-froechlich-2175b427b/",
       link2: "https://github.com/Franz2610",
-      profile_img: "/public/team/francesco.jpg",
+      profile_img: "/public/team/francesco2.jpeg",
     },
     {
       name: "Giuseppe Indomenico",
