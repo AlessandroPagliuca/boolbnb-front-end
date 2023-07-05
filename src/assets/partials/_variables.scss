@@ -4,7 +4,7 @@ $white: #FFFFFF;
 $black: #222222;
 $primary-subtle: #FFF1F1;
 
-body {
+#app {
     font-family: 'Lexend Deca', sans-serif, Arial, Helvetica, sans-serif;
 }
 
@@ -24,3 +24,4 @@ body {
     --bs-btn-disabled-bg: #fa5674 !important;
     --bs-btn-disabled-border-color: #fa5674 !important;
 }
+

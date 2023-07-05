@@ -362,7 +362,7 @@ export default {
     padding: 2rem;
     transition: all .5s;
     border-radius: 50%;
-
+    color: #ff385c !important;
     /* background-color: rgba(255, 255, 255, 0.5); */
     background-color: rgba(0, 0, 0, 0.5);
 }
