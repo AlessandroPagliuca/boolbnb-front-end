@@ -17,3 +17,4 @@ app.use(router)
 app.component('VCalendar', Calendar)
 app.component('VDatePicker', DatePicker)
 app.mount('#app')
+
