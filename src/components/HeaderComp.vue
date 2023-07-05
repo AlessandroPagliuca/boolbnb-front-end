@@ -34,7 +34,7 @@
             <nav
                 class="container-fluid navbar navbar-expand-lg navbar-dark d-flex justify-content-between fixed-top bg-black">
                 <div class="">
-                    <img src="../../public/logo-boolbnb.png" alt="logo">
+                    <img src="/logo-boolbnb.png" alt="logo">
                     <a class="navbar-brand text-first-primary fw-bold" href="#">BOOLBNB</a>
                 </div>
                 <div class="text-white">
