@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header class="bg-black">
+        <header class="">
             <!-- <nav class=" container-fluid navbar navbar-expand-lg navbar-light d-flex justify-content-between">
                 <div class="p-3">
                     <img src="" alt="">
@@ -31,7 +31,8 @@
                     </ul>
                 </div>
             </nav> -->
-            <nav class="container-fluid navbar navbar-expand-lg navbar-dark d-flex justify-content-between">
+            <nav
+                class="container-fluid navbar navbar-expand-lg navbar-dark d-flex justify-content-between fixed-top bg-black">
                 <div class="">
                     <img src="../../public/logo-boolbnb.png" alt="logo">
                     <a class="navbar-brand text-first-primary fw-bold" href="#">BOOLBNB</a>
@@ -44,7 +45,8 @@
                     <div class="collapse navbar-collapse text-white" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item" v-for="item in menu" :key="item.routeName">
-                                <router-link :to="{ name: item.routeName }" class="nav-link mx-2" active-class="active text-decoration-primary"> {{ item.label }} </router-link>
+                                <router-link :to="{ name: item.routeName }" class="nav-link mx-2"
+                                    active-class="active text-decoration-primary"> {{ item.label }} </router-link>
                             </li>
                         </ul>
                     </div>
@@ -115,21 +117,21 @@ export default {
     background-color: $primary;
 }
 
-.navbar-toggler{
+.navbar-toggler {
     color: white;
 }
 
-a{
+a {
     border-bottom: transparent 3px inset;
-    
+
 }
 
 .text-decoration-primary {
     border-bottom: $primary 3px inset;
-    
+
 }
 
-img{
+img {
     height: 60px;
 }
 </style>

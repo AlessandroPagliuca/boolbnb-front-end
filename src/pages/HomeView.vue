@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div class="jumbotron position-relative">
-      <img class="img-fluid" src="img\2008720-bellissimo-paesaggio-urbano-di-kobe-citta-giappone-gratuito-foto.jpg"
+      <img class="img-fluid" src="\img\2008720-bellissimo-paesaggio-urbano-di-kobe-citta-giappone-gratuito-foto.jpg"
         alt="jumbo">
 
 
@@ -41,10 +41,11 @@ export default {
 <style lang="scss" scoped>
 .jumbotron {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 76px);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 76px;
 
   img {
     width: 100%;
