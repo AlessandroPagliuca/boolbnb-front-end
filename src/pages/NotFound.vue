@@ -55,7 +55,8 @@
             <div class="text">
                 <article>
                     <p>Uh oh! Looks like you got lost. <br>Go back to the homepage if you dare!</p>
-                    <button>i dare!</button>
+                    <!-- <button>i dare!</button> -->
+                    <router-link :to="{ name: routeName }" class="button pt-2">I dare!</router-link>
                 </article>
             </div>
 
@@ -67,6 +68,12 @@
 
 export default {
     name: 'NotFound',
+    data() {
+        return {
+            label: 'Home',
+            routeName: 'home'
+        }
+    }
 }
 
 
@@ -271,7 +278,7 @@ h6,
 p,
 ul,
 li,
-button,
+.button,
 a,
 i,
 input,
@@ -628,7 +635,7 @@ nav {
                     text-shadow: 6px 6px 10px $bg-03;
                 }
 
-                button {
+                .button {
                     height: 40px;
                     padding: 0 30px;
                     border-radius: 50px;

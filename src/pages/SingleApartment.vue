@@ -1,8 +1,8 @@
 <template>
     <div class="row m-5">
         <div class="col-0 col-sm-1 col-md-1 col-lg-1 g-3 pb-4">
-            <!-- <router-link :to="{ name: item.routeName }" class="btn t-primary text-white rounded-5"><i class="fa-solid fa-arrow-left"></i></router-link> -->
-            <button class="btn btn-primary text-white rounded-5"><i class="fa-solid fa-arrow-left"></i></button>
+            <router-link :to="{ name: routeName }" class="btn btn-primary text-white rounded-5"><i class="fa-solid fa-arrow-left"></i></router-link>
+            <!-- <button class="btn btn-primary text-white rounded-5"><i class="fa-solid fa-arrow-left"></i></button> -->
         </div>
         <div class="col-11">
             <div class="row">
@@ -59,13 +59,8 @@ export default {
     },
     data() {
         return {
-            // menu: [
-            //     {
-            //         label: 'Apartments',
-            //         routeName: 'apartments'
-            //     },
-                
-            // ]
+            label: 'Apartments',
+            routeName: 'apartments'
         }
     }
 }
