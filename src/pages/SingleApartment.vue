@@ -1,12 +1,12 @@
 <template>
     <div class="row m-5">
-        <div class="col-1">
-            <!-- <router-link :to="{ name: item.routeName }" class="btn btn-primary text-white"> ⬅︎ </router-link> -->
+        <div class="col-0 col-sm-1 col-md-1 col-lg-1 g-3 pb-4">
+            <!-- <router-link :to="{ name: item.routeName }" class="btn t-primary text-white rounded-5"><i class="fa-solid fa-arrow-left"></i></router-link> -->
             <button class="btn btn-primary text-white rounded-5"><i class="fa-solid fa-arrow-left"></i></button>
         </div>
         <div class="col-11">
             <div class="row">
-                <div class="col-6 mb-5">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-5">
                     <div class="image-box mb-3">
                         <img class="img-fluid" src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
                     </div>
@@ -26,7 +26,7 @@
                         <button class="btn btn-primary text-white">mostra tutti</button>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
                     <div class="description-box mb-5">
                         <h3>Descrizione</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, harum neque architecto tempora repudiandae alias accusamus ea deleniti explicabo sit fuga ducimus quas ipsam est iusto maxime suscipit esse eos laboriosam illum. Sunt voluptatibus necessitatibus illum numquam facilis optio expedita. Voluptatum odio veritatis excepturi obcaecati commodi consequatur vitae possimus asperiores!</p>
@@ -72,9 +72,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/partials/variables' as *;
 .image-box{
     width: 70%;
     // border: 1px solid black;
 }
+
+
 
 </style>

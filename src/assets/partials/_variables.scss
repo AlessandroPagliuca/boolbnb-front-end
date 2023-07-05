@@ -7,3 +7,20 @@ $primary-subtle: #FFF1F1;
 body {
     font-family: 'Lexend Deca', sans-serif, Arial, Helvetica, sans-serif;
 }
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #ff385c !important;
+    --bs-btn-border-color: #ff385c !important;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #e91f44 !important;
+    --bs-btn-hover-border-color: #e91f44 !important;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #e91c42 !important;
+    --bs-btn-active-border-color: #e91c42 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #fa5674 !important;
+    --bs-btn-disabled-border-color: #fa5674 !important;
+}
