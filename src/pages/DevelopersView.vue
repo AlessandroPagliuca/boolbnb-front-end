@@ -6,24 +6,21 @@
         <div class="cards-container d-flex justify-content-center">
           <div class="card rounded-2">
             <div class="header-card">
-              <div class="avatar">
-                <img :src="team.profile_img" :alt="team.name" />
+              <div class="avatar ">
+                <img class="" :src="team.profile_img" :alt="team.name" />
               </div>
             </div>
 
-            <h4 class="text-black">{{ team.name }}</h4>
-            <div class="">
-              <p class="fw-semibold">{{ team.role }}</p>
+            <h4 class="text-black px-2 pt-2">{{ team.name }}</h4>
+            <div>
+              <p class="fw-semibold px-2">{{ team.role }}</p>
               <hr />
-              <div class="d-flex">
+              <div class="d-flex px-2">
                 <a class=" fw-semibold" href="{{ team.link }}">Linkedin <i class="fa-brands fa-linkedin text-black"></i>
                 </a>
-                <p class="px-1"> | </p>
+                <span class="px-1"> | </span>
                 <a class=" fw-semibold" href="{{ team.link }}">Github <i class="fa-brands fa-github text-black"></i></a>
               </div>
-
-
-
             </div>
           </div>
         </div>
@@ -64,13 +61,15 @@ img {
 
 .card {
   width: 300px;
-  height: 430px;
+  height: 440px;
   margin-bottom: 50px;
 }
 
 .header-card {
   background-color: $primary;
   height: 300px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .text-team {
