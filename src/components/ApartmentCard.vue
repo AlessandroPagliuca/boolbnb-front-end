@@ -1,7 +1,7 @@
 <template>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
 
-       
+
 
         <div class="card shadow mb-3">
 
@@ -17,7 +17,6 @@
                 <img class="img-fluid"
                     src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
 
-                <img class="img-fluid" src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
 
                 <!-- <img :src="getImagePath" :alt="product.name"> -->
             </div>
@@ -28,7 +27,7 @@
                     <span> | </span>
                     <span>letti</span>
                     <p>Price: &euro;</p>
-                    
+
                     <!-- <h6>{{ product.brand.name }}</h6>
                     <span>{{ product.category.name }}</span> -->
                 </div>
