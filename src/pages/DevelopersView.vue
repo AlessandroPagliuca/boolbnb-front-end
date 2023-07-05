@@ -1,7 +1,7 @@
 <template>
   <div class="background">
 
-    <div class="container 100vh">
+    <div class="container">
       <h2 class="text-center my-5 text-team">Conosci meglio il nostro Team!</h2>
       <div class="row align-items-stretch">
         <div v-for="(team, index) in teams" :key="index" class="col-12 col-md-6 col-lg-4">
@@ -18,10 +18,12 @@
                 <p class="fw-semibold px-2">{{ team.role }}</p>
                 <hr />
                 <div class="d-flex px-2">
-                  <a class=" fw-semibold" href="{{ team.link }}">Linkedin <i class="fa-brands fa-linkedin text-black"></i>
+                  <a class=" fw-semibold text-team" :href="team.link">Linkedin <i
+                      class="fa-brands fa-linkedin text-black"></i>
                   </a>
                   <span class="px-1"> | </span>
-                  <a class=" fw-semibold" href="{{ team.link }}">Github <i class="fa-brands fa-github text-black"></i></a>
+                  <a class=" fw-semibold text-team" :href="team.link2">Github <i
+                      class="fa-brands fa-github text-black"></i></a>
                 </div>
               </div>
             </div>
@@ -56,6 +58,7 @@ export default {
 
 .background {
   background-color: $primary-subtle;
+
 }
 
 img {
@@ -99,5 +102,6 @@ hr {
 
 a {
   text-decoration: none;
+
 }
 </style>
