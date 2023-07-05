@@ -56,7 +56,7 @@
                 <article>
                     <p>Uh oh! Looks like you got lost. <br>Go back to the homepage if you dare!</p>
                     <!-- <button>i dare!</button> -->
-                    <router-link :to="{ name: routeName }" class="button pt-2">I dare!</router-link>
+                    <router-link :to="{ name: routeName }" class="button pt-2">i dare!</router-link>
                 </article>
             </div>
 
