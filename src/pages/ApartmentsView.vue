@@ -18,9 +18,13 @@
 
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                    <li class="page-item"><button :class="{ 'page-link': true, 'disabled': currentPage === 1 }" @click="getData(currentPage - 1)">Previous</button></li>
-                    <li class="page-item" v-for="n in lastPage"><button :class="{ 'page-link': true, 'active': currentPage === n }" @click="getData(n)">{{ n }}</button></li>
-                    <li class="page-item"><button :class="{ 'page-link': true, 'disabled': currentPage === 4 }" @click="getData(currentPage + 1)">Next</button></li>
+                    <li class="page-item"><button :class="{ 'page-link': true, 'disabled': currentPage === 1 }"
+                            @click="getData(currentPage - 1)">Previous</button></li>
+                    <li class="page-item" v-for="n in lastPage"><button
+                            :class="{ 'page-link': true, 'active': currentPage === n }" @click="getData(n)">{{ n }}</button>
+                    </li>
+                    <li class="page-item"><button :class="{ 'page-link': true, 'disabled': currentPage === 4 }"
+                            @click="getData(currentPage + 1)">Next</button></li>
                 </ul>
             </nav>
         </div>
@@ -29,9 +33,10 @@
 
 <script>
 import ApartmentCard from '../components/ApartmentCard.vue';
+import axios from 'axios';
 export default {
     name: 'ApartmentsView',
-    components:{
+    components: {
         ApartmentCard,
     },
     data() {
@@ -44,22 +49,22 @@ export default {
         }
     },
     methods: {
-            getData(numPage) {
-                axios.get(`${this.apiUrl}/projects`, {
-                    params: {
-                        'page': numPage
-                    }
-                }).then((res) => {
-                    //console.log(res);
-                    this.projects = res.data.results.data;
-                    this.currentPage = res.data.results.current_page;
-                    this.lastPage = res.data.results.last_page;
-                })
-            }
-        },
-        mounted() {
-            this.getData(1);
+        getData(numPage) {
+            axios.get(`${this.apiUrl}/projects`, {
+                params: {
+                    'page': numPage
+                }
+            }).then((res) => {
+                //console.log(res);
+                this.projects = res.data.results.data;
+                this.currentPage = res.data.results.current_page;
+                this.lastPage = res.data.results.last_page;
+            })
         }
+    },
+    mounted() {
+        this.getData(1);
+    }
 }
 </script>
 

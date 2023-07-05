@@ -1,10 +1,10 @@
 <template>
-  <HeaderComp/>
+  <HeaderComp />
+  <div class="margin">
+    <RouterView></RouterView>
+  </div>
 
-<RouterView></RouterView>
-
-  <FooterComp/>
-  
+  <FooterComp />
 </template>
 
 <script>
@@ -21,4 +21,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.margin {
+  margin-top: 76px;
+}
+</style>
