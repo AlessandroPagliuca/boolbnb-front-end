@@ -63,6 +63,14 @@ img {
   width: 300px;
   height: 440px;
   margin-bottom: 50px;
+  transition: all .5s;
+  transform: scale(0.9);
+
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 1px 1px 12px 6px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .header-card {
