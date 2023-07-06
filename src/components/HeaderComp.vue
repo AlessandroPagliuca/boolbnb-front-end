@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header class="">
+        <header class="" style="background-color: #222222">
             <!-- <nav class=" container-fluid navbar navbar-expand-lg navbar-light d-flex justify-content-between">
                 <div class="p-3">
                     <img src="" alt="">
@@ -31,7 +31,7 @@
                     </ul>
                 </div>
             </nav> -->
-            <nav class="container-fluid navbar navbar-expand-lg navbar-dark d-flex justify-content-between fixed-top bg-black top-nav">
+            <nav class="container-fluid navbar navbar-expand-lg navbar-dark d-flex justify-content-between fixed-top top-nav" style="background-color: #222222">
                 <div class="">
                     <img src="/logo-boolbnb.png" alt="logo">
                     <a class="navbar-brand text-first-primary fw-bold" href="#">BOOLBNB</a>
