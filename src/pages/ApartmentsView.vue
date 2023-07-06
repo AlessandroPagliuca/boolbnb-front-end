@@ -3,8 +3,9 @@
         <div class="container">
             <h1 class="text-black my-5">{{ title }}</h1>
             <div class="row mb-4">
-                <ApartmentCard v-for="(apartment, index) in apartments" :key="apartment.id" :apartment="apartment" />
-
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-for="(apartment, index) in apartments" :key="apartment.id">
+                    <ApartmentCard :apartment="apartment" />
+                </div>
             </div>
 
             <div class="" style="width: fit-content;">
