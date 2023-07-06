@@ -21,7 +21,7 @@
                         <div class="row mt-1 mb-3" >
                              <div v-for="(service , index) in apartment.services" class="col-6"><i v-if="service.icon == 'instagram fa-rotate-180'" :class="'fa-brands fa-'+service.icon"></i><i v-else :class="'fa-solid fa-'+service.icon"></i> {{ service.name }}</div> 
                         </div>
-                        <button class="btn btn-primary text-white">mostra tutti</button>
+                        <!-- <button class="btn btn-primary text-white">mostra tutti</button> -->
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6">
