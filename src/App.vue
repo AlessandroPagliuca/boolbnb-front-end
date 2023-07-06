@@ -4,7 +4,7 @@
     <RouterView></RouterView>
   </div>
 
-  <FooterComp />
+  <FooterComp  class="footer-class"/>
 </template>
 
 <script>

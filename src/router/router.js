@@ -55,7 +55,8 @@ const router = createRouter({
         {
             path: '/apartments',
             name: 'apartments',
-            component: () => import('../pages/ApartmentsView.vue')
+            component: () => import('../pages/ApartmentsView.vue'),
+            props: (route) => ({ searchQuery: route.query.q || '' }), // Recupera il parametro di ricerca come query parameter
         },
         {
             path: '/developers',
@@ -69,11 +70,11 @@ const router = createRouter({
             component: () => import('../pages/SingleApartment.vue')
         },
 
-        // {
-        //     path: '/payment-page',
-        //     name: 'payment-page',
-        //     component: () => import('../pages/PaymentPage.vue')
-        // },
+        {
+            path: '/payment-page/:slug',
+            name: 'payment-page',
+            component: () => import('../pages/PaymentPage.vue')
+        },
 
 
         //page not found error 404

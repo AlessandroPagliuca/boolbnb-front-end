@@ -1,7 +1,9 @@
 <template>
     <div class="body overflow-auto">
         <div class="container">
-            <h1 class="text-black my-5">{{ title }}</h1>
+            <SearchBar />
+
+            <!-- <h1 class="text-black my-5">{{ title }}</h1>
             <div class="row mb-4">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-for="(apartment, index) in apartments" :key="apartment.id">
                     <ApartmentCard :apartment="apartment" />
@@ -22,52 +24,30 @@
                                 @click="getData(currentPage + 1)">Next</button></li>
                     </ul>
                 </nav>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
 
 <script>
-import axios from 'axios';
-import ApartmentCard from '../components/ApartmentCard.vue';
+import SearchBar from '../components/SearchBar.vue';
+
 export default {
     name: 'ApartmentsView',
     components: {
-        ApartmentCard,
+        SearchBar
     },
-    data() {
-        return {
-            title: 'All apartments',
-            apartments: [],
-            apiUrl: 'http://127.0.0.1:8000/api',
-            currentPage: 1,
-            lastPage: null,
-        }
-    },
-    methods: {
-        getData(numPage) {
-            axios.get(`${this.apiUrl}/apartments`, {
-                params: {
-                    'page': numPage,
-                }
-            })
-                .then((res) => {
-                    console.log(res);
-                    this.apartments = res.data.data;
-                    this.currentPage = res.data.meta.current_page;
-                    this.lastPage = res.data.meta.last_page;
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
-        }
 
-
-    },
-    mounted() {
-        this.getData(1);
-    }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.body{
+    margin-top: 76px;
+    height: 100vh;
+}
+
+.container{
+    height: 100vh;
+}
+</style>
