@@ -40,4 +40,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.body{
+    margin-top: 76px;
+    height: 100vh;
+}
+
+.container{
+    height: 100vh;
+}
+</style>

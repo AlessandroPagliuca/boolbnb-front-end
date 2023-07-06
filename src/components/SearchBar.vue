@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
         <input class=" rounded-2" type="text" v-model="searchQuery" placeholder="Cerca per nome"
             @keyup.enter="filterAppartamenti">
         <!-- <ul> -->
@@ -10,7 +10,7 @@
         </div>
 
         <div v-if="isApartmentsRoute" class="" style="width: fit-content;">
-            <nav aria-label="Page navigation example" class="py-5">
+            <nav v-if="filteredAppartamenti.length > 0" aria-label="Page navigation example" class="py-5">
                 <ul class="pagination">
                     <li class="page-item"><button :class="{ 'page-link': true, 'disabled': currentPage === 1 }"
                             @click="getData(currentPage - 1)">Previous</button></li>
