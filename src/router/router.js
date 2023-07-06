@@ -69,11 +69,11 @@ const router = createRouter({
             component: () => import('../pages/SingleApartment.vue')
         },
 
-        // {
-        //     path: '/payment-page',
-        //     name: 'payment-page',
-        //     component: () => import('../pages/PaymentPage.vue')
-        // },
+        {
+            path: '/payment-page/:slug',
+            name: 'payment-page',
+            component: () => import('../pages/PaymentPage.vue')
+        },
 
 
         //page not found error 404
