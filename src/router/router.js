@@ -4,6 +4,7 @@ import HomeView from '../pages/HomeView.vue';
 import ApartmentsView from '../pages/ApartmentsView.vue';
 import DevelopersView from '../pages/DevelopersView.vue';
 import SingleApartment from '../pages/SingleApartment.vue';
+import PaymentPage from '../pages/PaymentPage.vue';
 import NotFound from '../pages/NotFound.Vue';
 
 
@@ -67,6 +68,12 @@ const router = createRouter({
             name: 'single-apartment',
             component: () => import('../pages/SingleApartment.vue')
         },
+
+        // {
+        //     path: '/payment-page',
+        //     name: 'payment-page',
+        //     component: () => import('../pages/PaymentPage.vue')
+        // },
 
 
         //page not found error 404
