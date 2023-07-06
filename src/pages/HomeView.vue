@@ -4,6 +4,11 @@
       <img class="img-fluid" src="\img\2008720-bellissimo-paesaggio-urbano-di-kobe-citta-giappone-gratuito-foto.jpg"
         alt="jumbo">
 
+      <div class="border-1 border-danger position-absolute">
+        <SearchComponent />
+        <ProvaSearch />
+      </div>
+
 
 
     </div>
@@ -29,14 +34,24 @@
 <script>
 import Carousel from '../components/Carousel.vue';
 import MapComp from '../components/MapComp.vue';
+import SearchComponent from '../components/searchcomponent.vue';
+import ProvaSearch from '../components/ProvaSearch.vue';
+
+
 export default {
   name: 'HomeView',
 
   components: {
     Carousel,
     MapComp,
+    SearchComponent,
+    ProvaSearch
 
-  }
+  },
+
+
+
+
 }
 </script>
 
