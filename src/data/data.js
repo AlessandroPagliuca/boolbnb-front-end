@@ -1,7 +1,7 @@
 const teams = [
   {
     name: "Alessandro Pagliuca",
-    role: "Junior Back-end Developer",
+    role: "Junior Full Stack Web Developer",
     link: "https://www.linkedin.com/in/alessandro-pagliuca/",
     link2: "https://github.com/AlessandroPagliuca",
     profile_img: "/team/alex.jpeg",
@@ -22,7 +22,7 @@ const teams = [
   },
   {
     name: "Giovanni Speranza",
-    role: "Junior Back-end Developer",
+    role: "Junior Full Stack Web Developer",
     link: "https://www.linkedin.com/in/giovanni-jacopo-speranza/",
     link2: "https://github.com/giospes",
     profile_img: "/team/giovanni.jpeg",

@@ -17,8 +17,10 @@
     <h2 class="text-capitalize my-3">maps</h2>
 
     <!-- mappa -->
-    <!-- 
-    <MapComp /> -->
+    <div class="pb-3 rounded-2 box-prov">
+      <MapComp />
+
+    </div>
   </div>
 </template>
 
@@ -39,6 +41,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.box-prov {
+  overflow: hidden;
+}
+
 .jumbotron {
   width: 100%;
   height: calc(100vh - 76px);
