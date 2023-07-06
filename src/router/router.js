@@ -55,7 +55,8 @@ const router = createRouter({
         {
             path: '/apartments',
             name: 'apartments',
-            component: () => import('../pages/ApartmentsView.vue')
+            component: () => import('../pages/ApartmentsView.vue'),
+            props: (route) => ({ searchQuery: route.query.q || '' }), // Recupera il parametro di ricerca come query parameter
         },
         {
             path: '/developers',
