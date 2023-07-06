@@ -4,20 +4,20 @@
       <img class="img-fluid" src="\img\2008720-bellissimo-paesaggio-urbano-di-kobe-citta-giappone-gratuito-foto.jpg"
         alt="jumbo">
 
-
+      <!-- <SearchBar class="position-absolute"/>  NON FUNZIONA-->
 
     </div>
   </div>
   <!-- carosello -->
   <div class="container-fluid  px-5 ">
-    <h2 class="text-capitalize my-3">featured apartments</h2>
+    <h2 class="text-capitalize py-3">featured apartments</h2>
 
     <Carousel />
 
-    <h2 class="text-capitalize my-3">maps</h2>
+    <h2 class="text-capitalize py-3">maps</h2>
 
     <!-- mappa -->
-    <div class="pb-3 rounded-2 box-prov">
+    <div class="pb-3 rounded-2 box-map">
       <MapComp />
 
     </div>
@@ -29,19 +29,23 @@
 <script>
 import Carousel from '../components/Carousel.vue';
 import MapComp from '../components/MapComp.vue';
+//import SearchBar from '../components/SearchBar.vue'; 
 export default {
   name: 'HomeView',
 
   components: {
     Carousel,
     MapComp,
+    //SearchBar
+  },
+  methods: {
 
-  }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-.box-prov {
+.box-map {
   overflow: hidden;
 }
 
