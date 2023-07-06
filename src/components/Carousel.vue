@@ -20,318 +20,28 @@
         spaceBetween: 50,
     },
 }" class="mySwiper">
-        <swiper-slide>
-            <div class="card shadow">
-                <div class="card-title">
-                    <!-- <h3>{{ product.name }}</h3> -->
-                    <h3>NOME APPARTAMENTO</h3>
-                </div>
-                <div class="card-img-top">
-                    <img class="img-fluid"
-                        src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
-                    <!-- <img :src="getImagePath" :alt="product.name"> -->
-                </div>
-                <div class="card-body d-flex justify-content-between align-items-end">
-                    <div>
-                        <h6>luogo</h6>
-                        <span>stanze</span>
-                        <span>letti</span>
-                        <span>Price: &euro;</span>
-                        <!-- <h6>{{ product.brand.name }}</h6>
-                    <span>{{ product.category.name }}</span> -->
-                    </div>
-                    <!-- <div class="card-text">
-                    <p>
-                         <a href="#" class="btn btn-primary">Go somewhere</a> 
-                        <router-link :to="{ name: 'single-product', params: { slug: product.slug } }"
-                            class="btn btn-primary">View
-                        </router-link>
-                    </p>
-                    Price: {{ product.price || 0 }} &euro;
-                </div> -->
+        <swiper-slide v-for="(apartment, index) in apartments" :key="apartment.id">
 
-                </div>
-            </div>1
+            <ApartmentCard :apartment="apartment" />
+
         </swiper-slide>
-        <swiper-slide>
-            <div class="card shadow">
-                <div class="card-title">
-                    <!-- <h3>{{ product.name }}</h3> -->
-                    <h3>NOME APPARTAMENTO</h3>
-                </div>
-                <div class="card-img-top">
-                    <img class="img-fluid"
-                        src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
-                    <!-- <img :src="getImagePath" :alt="product.name"> -->
-                </div>
-                <div class="card-body d-flex justify-content-between align-items-end">
-                    <div>
-                        <h6>luogo</h6>
-                        <span>stanze</span>
-                        <span>letti</span>
-                        <span>Price: &euro;</span>
-                        <!-- <h6>{{ product.brand.name }}</h6>
-                    <span>{{ product.category.name }}</span> -->
-                    </div>
-                    <!-- <div class="card-text">
-                    <p>
-                         <a href="#" class="btn btn-primary">Go somewhere</a> 
-                        <router-link :to="{ name: 'single-product', params: { slug: product.slug } }"
-                            class="btn btn-primary">View
-                        </router-link>
-                    </p>
-                    Price: {{ product.price || 0 }} &euro;
-                </div> -->
 
-                </div>
-            </div>2
-        </swiper-slide><swiper-slide>
-            <div class="card shadow">
-                <div class="card-title">
-                    <!-- <h3>{{ product.name }}</h3> -->
-                    <h3>NOME APPARTAMENTO</h3>
-                </div>
-                <div class="card-img-top">
-                    <img class="img-fluid"
-                        src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
-                    <!-- <img :src="getImagePath" :alt="product.name"> -->
-                </div>
-                <div class="card-body d-flex justify-content-between align-items-end">
-                    <div>
-                        <h6>luogo</h6>
-                        <span>stanze</span>
-                        <span>letti</span>
-                        <span>Price: &euro;</span>
-                        <!-- <h6>{{ product.brand.name }}</h6>
-                    <span>{{ product.category.name }}</span> -->
-                    </div>
-                    <!-- <div class="card-text">
-                    <p>
-                         <a href="#" class="btn btn-primary">Go somewhere</a> 
-                        <router-link :to="{ name: 'single-product', params: { slug: product.slug } }"
-                            class="btn btn-primary">View
-                        </router-link>
-                    </p>
-                    Price: {{ product.price || 0 }} &euro;
-                </div> -->
-
-                </div>
-            </div>3
-        </swiper-slide>
-        <swiper-slide>
-            <div class="card shadow">
-                <div class="card-title">
-                    <!-- <h3>{{ product.name }}</h3> -->
-                    <h3>NOME APPARTAMENTO</h3>
-                </div>
-                <div class="card-img-top">
-                    <img class="img-fluid"
-                        src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
-                    <!-- <img :src="getImagePath" :alt="product.name"> -->
-                </div>
-                <div class="card-body d-flex justify-content-between align-items-end">
-                    <div>
-                        <h6>luogo</h6>
-                        <span>stanze</span>
-                        <span>letti</span>
-                        <span>Price: &euro;</span>
-                        <!-- <h6>{{ product.brand.name }}</h6>
-                    <span>{{ product.category.name }}</span> -->
-                    </div>
-                    <!-- <div class="card-text">
-                    <p>
-                         <a href="#" class="btn btn-primary">Go somewhere</a> 
-                        <router-link :to="{ name: 'single-product', params: { slug: product.slug } }"
-                            class="btn btn-primary">View
-                        </router-link>
-                    </p>
-                    Price: {{ product.price || 0 }} &euro;
-                </div> -->
-
-                </div>
-            </div>4
-        </swiper-slide><swiper-slide>
-            <div class="card shadow">
-                <div class="card-title">
-                    <!-- <h3>{{ product.name }}</h3> -->
-                    <h3>NOME APPARTAMENTO</h3>
-                </div>
-                <div class="card-img-top">
-                    <img class="img-fluid"
-                        src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
-                    <!-- <img :src="getImagePath" :alt="product.name"> -->
-                </div>
-                <div class="card-body d-flex justify-content-between align-items-end">
-                    <div>
-                        <h6>luogo</h6>
-                        <span>stanze</span>
-                        <span>letti</span>
-                        <span>Price: &euro;</span>
-                        <!-- <h6>{{ product.brand.name }}</h6>
-                    <span>{{ product.category.name }}</span> -->
-                    </div>
-                    <!-- <div class="card-text">
-                    <p>
-                         <a href="#" class="btn btn-primary">Go somewhere</a> 
-                        <router-link :to="{ name: 'single-product', params: { slug: product.slug } }"
-                            class="btn btn-primary">View
-                        </router-link>
-                    </p>
-                    Price: {{ product.price || 0 }} &euro;
-                </div> -->
-
-                </div>
-            </div>5
-        </swiper-slide>
-        <swiper-slide>
-            <div class="card shadow">
-                <div class="card-title">
-                    <!-- <h3>{{ product.name }}</h3> -->
-                    <h3>NOME APPARTAMENTO</h3>
-                </div>
-                <div class="card-img-top">
-                    <img class="img-fluid"
-                        src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
-                    <!-- <img :src="getImagePath" :alt="product.name"> -->
-                </div>
-                <div class="card-body d-flex justify-content-between align-items-end">
-                    <div>
-                        <h6>luogo</h6>
-                        <span>stanze</span>
-                        <span>letti</span>
-                        <span>Price: &euro;</span>
-                        <!-- <h6>{{ product.brand.name }}</h6>
-                    <span>{{ product.category.name }}</span> -->
-                    </div>
-                    <!-- <div class="card-text">
-                    <p>
-                         <a href="#" class="btn btn-primary">Go somewhere</a> 
-                        <router-link :to="{ name: 'single-product', params: { slug: product.slug } }"
-                            class="btn btn-primary">View
-                        </router-link>
-                    </p>
-                    Price: {{ product.price || 0 }} &euro;
-                </div> -->
-
-                </div>
-            </div>6
-        </swiper-slide><swiper-slide>
-            <div class="card shadow">
-                <div class="card-title">
-                    <!-- <h3>{{ product.name }}</h3> -->
-                    <h3>NOME APPARTAMENTO</h3>
-                </div>
-                <div class="card-img-top">
-                    <img class="img-fluid"
-                        src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
-                    <!-- <img :src="getImagePath" :alt="product.name"> -->
-                </div>
-                <div class="card-body d-flex justify-content-between align-items-end">
-                    <div>
-                        <h6>luogo</h6>
-                        <span>stanze</span>
-                        <span>letti</span>
-                        <span>Price: &euro;</span>
-                        <!-- <h6>{{ product.brand.name }}</h6>
-                    <span>{{ product.category.name }}</span> -->
-                    </div>
-                    <!-- <div class="card-text">
-                    <p>
-                         <a href="#" class="btn btn-primary">Go somewhere</a> 
-                        <router-link :to="{ name: 'single-product', params: { slug: product.slug } }"
-                            class="btn btn-primary">View
-                        </router-link>
-                    </p>
-                    Price: {{ product.price || 0 }} &euro;
-                </div> -->
-
-                </div>
-            </div>7
-        </swiper-slide>
-        <swiper-slide>
-            <div class="card shadow">
-                <div class="card-title">
-                    <!-- <h3>{{ product.name }}</h3> -->
-                    <h3>NOME APPARTAMENTO</h3>
-                </div>
-                <div class="card-img-top">
-                    <img class="img-fluid"
-                        src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
-                    <!-- <img :src="getImagePath" :alt="product.name"> -->
-                </div>
-                <div class="card-body d-flex justify-content-between align-items-end">
-                    <div>
-                        <h6>luogo</h6>
-                        <span>stanze</span>
-                        <span>letti</span>
-                        <span>Price: &euro;</span>
-                        <!-- <h6>{{ product.brand.name }}</h6>
-                    <span>{{ product.category.name }}</span> -->
-                    </div>
-                    <!-- <div class="card-text">
-                    <p>
-                         <a href="#" class="btn btn-primary">Go somewhere</a> 
-                        <router-link :to="{ name: 'single-product', params: { slug: product.slug } }"
-                            class="btn btn-primary">View
-                        </router-link>
-                    </p>
-                    Price: {{ product.price || 0 }} &euro;
-                </div> -->
-
-                </div>
-            </div>8
-        </swiper-slide><swiper-slide>
-            <div class="card shadow">
-                <div class="card-title">
-                    <!-- <h3>{{ product.name }}</h3> -->
-                    <h3>NOME APPARTAMENTO</h3>
-                </div>
-                <div class="card-img-top">
-                    <img class="img-fluid"
-                        src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
-                    <!-- <img :src="getImagePath" :alt="product.name"> -->
-                </div>
-                <div class="card-body d-flex justify-content-between align-items-end">
-                    <div>
-                        <h6>luogo</h6>
-                        <span>stanze</span>
-                        <span>letti</span>
-                        <span>Price: &euro;</span>
-                        <!-- <h6>{{ product.brand.name }}</h6>
-                    <span>{{ product.category.name }}</span> -->
-                    </div>
-                    <!-- <div class="card-text">
-                    <p>
-                         <a href="#" class="btn btn-primary">Go somewhere</a> 
-                        <router-link :to="{ name: 'single-product', params: { slug: product.slug } }"
-                            class="btn btn-primary">View
-                        </router-link>
-                    </p>
-                    Price: {{ product.price || 0 }} &euro;
-                </div> -->
-
-                </div>
-            </div>9
-        </swiper-slide>
     </swiper>
 </template>
 <script>
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
-
-// Import Swiper styles
-import 'swiper/css';
-
-import 'swiper/css/bundle';
-
-
-// import required modules
+import ApartmentCard from './ApartmentCard.vue';
+import axios from 'axios';
+//import swiper
 import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay, Scrollbar, A11y } from 'swiper/modules';
-
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/bundle';
 export default {
+
     components: {
         Swiper,
         SwiperSlide,
+        ApartmentCard,
     },
     setup() {
         const onSwiper = (swiper) => {
@@ -347,6 +57,31 @@ export default {
 
         };
     },
+    data() {
+        return {
+            apartments: [],
+            apiUrl: 'http://127.0.0.1:8000/api',
+        }
+    },
+    methods: {
+        getData() {
+            axios.get(`${this.apiUrl}/apartments/home`, {
+
+            })
+                .then((res) => {
+                    console.log(res);
+                    this.apartments = res.data.results;
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        }
+
+
+    },
+    mounted() {
+        this.getData();
+    }
 };
 </script>
 

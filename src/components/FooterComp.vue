@@ -1,8 +1,8 @@
 <template>
   <!-- Remove the container if you want to extend the Footer to full width. -->
-  <div class="">
+  <div class="footer">
     <!-- Footer -->
-    <footer class="text-center text-white" style="background-color: #000000">
+    <footer class="text-center text-white" style="background-color: #222222">
       <!-- Grid container -->
       <div class="container">
         <!-- Section: Links -->
@@ -100,6 +100,10 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/partials/variables' as *;
+
+.footer{
+  height: 400px;
+}
 
 hr {
   color: $primary;

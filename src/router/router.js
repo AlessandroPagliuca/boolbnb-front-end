@@ -4,6 +4,7 @@ import HomeView from '../pages/HomeView.vue';
 import ApartmentsView from '../pages/ApartmentsView.vue';
 import DevelopersView from '../pages/DevelopersView.vue';
 import SingleApartment from '../pages/SingleApartment.vue';
+import PaymentPage from '../pages/PaymentPage.vue';
 import NotFound from '../pages/NotFound.Vue';
 
 
@@ -54,7 +55,8 @@ const router = createRouter({
         {
             path: '/apartments',
             name: 'apartments',
-            component: () => import('../pages/ApartmentsView.vue')
+            component: () => import('../pages/ApartmentsView.vue'),
+            props: (route) => ({ searchQuery: route.query.q || '' }), // Recupera il parametro di ricerca come query parameter
         },
         {
             path: '/developers',
@@ -66,6 +68,12 @@ const router = createRouter({
             path: '/apartment/:slug',
             name: 'single-apartment',
             component: () => import('../pages/SingleApartment.vue')
+        },
+
+        {
+            path: '/payment-page/:slug',
+            name: 'payment-page',
+            component: () => import('../pages/PaymentPage.vue')
         },
 
 
