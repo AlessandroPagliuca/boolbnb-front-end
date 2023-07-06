@@ -1,5 +1,5 @@
 <template>
-    <div class="row m-5">
+    <div class="row p-5" v-if="apartment">
         <div class="col-0 col-sm-1 col-md-1 col-lg-1 g-3 pb-4">
             <router-link :to="{ name: routeName }" class="btn btn-primary text-white rounded-5"><i class="fa-solid fa-arrow-left"></i></router-link>
             <!-- <button class="btn btn-primary text-white rounded-5"><i class="fa-solid fa-arrow-left"></i></button> -->
@@ -8,20 +8,18 @@
             <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-5">
                     <div class="image-box mb-3">
-                        <img class="img-fluid" src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd4.jpg" alt="">
+                        <img class="img-fluid" v-if="apartment.main_img.includes('http')" :src="apartment.main_img" alt="">
+                        <img class="img-fluid" v-else :src="getImagePath" :alt="apartment.title">
                     </div>
                     <div class="mb-4">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quis inventore minus unde reprehenderit voluptas vero repudiandae consequatur laudantium suscipit et veniam, soluta quo possimus quae laborum distinctio alias maiores!</p>
+                        <p>{{ apartment.title }} 
+                        <br> {{ apartment.city }} {{ apartment.country }} {{ apartment.address }} 
+                        <br> {{ apartment.rooms }} <i class="fa-solid fa-person-shelter"></i> | {{ apartment.beds }} <i class="fa-solid fa-bed"></i> | {{ apartment.bathrooms }} <i class="fa-solid fa-toilet"></i></p>
                     </div>
-                    <div class="services-box">
+                    <div class="services-box" >
                         <h4>Servizi</h4>
-                        <div class="row mt-1 mb-3">
-                            <div class="col-6">servizio 1</div>
-                            <div class="col-6">servizio 1</div>
-                            <div class="col-6">servizio 1</div>
-                            <div class="col-6">servizio 1</div>
-                            <div class="col-6">servizio 1</div>
-                            <div class="col-6">servizio 1</div>
+                        <div class="row mt-1 mb-3" >
+                             <div v-for="(service , index) in apartment.services" class="col-6"><i v-if="service.icon == 'instagram fa-rotate-180'" :class="'fa-brands fa-'+service.icon"></i><i v-else :class="'fa-solid fa-'+service.icon"></i> {{ service.name }}</div> 
                         </div>
                         <button class="btn btn-primary text-white">mostra tutti</button>
                     </div>
@@ -29,7 +27,7 @@
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6">
                     <div class="description-box mb-5">
                         <h3>Descrizione</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, harum neque architecto tempora repudiandae alias accusamus ea deleniti explicabo sit fuga ducimus quas ipsam est iusto maxime suscipit esse eos laboriosam illum. Sunt voluptatibus necessitatibus illum numquam facilis optio expedita. Voluptatum odio veritatis excepturi obcaecati commodi consequatur vitae possimus asperiores!</p>
+                        <p>{{apartment.description}}</p>
                     </div>
                     <div class="preview card p-3">
                         <div class="border shadow d-flex justify-content-around rounded-3 mb-5">
@@ -52,6 +50,8 @@
 
 <script>
 import Date from '../components/Date.vue';
+import axios from 'axios';
+import { store } from '../store';
 export default {
     name: 'SingleApartment',
     components:{
@@ -60,7 +60,44 @@ export default {
     data() {
         return {
             label: 'Apartments',
-            routeName: 'apartments'
+            routeName: 'apartments',
+            apartment: null,
+            apiUrl: 'http://127.0.0.1:8000/api',
+        }
+    },
+    methods: {
+        getApartment() {
+            axios.get(`${this.apiUrl}/apartment/${this.$route.params.slug}`).then((res) => {
+
+                this.apartment = res.data.results;
+                console.log(res.data.results);
+                // if(res.data.results){
+                    
+                // } else{
+                //     this.$router.push({name: 'not-found'});
+                // }
+
+            }).catch((error) => {
+                console.log(error);
+                console.log(error.response.data);
+                this.$router.push({ name: 'not-found', query: { e: error.response.data.message } });
+             })//.finally(() => {
+            //     setTimeout(() => {
+            //         this.isLoading = false;
+            //     }, 2000);
+            // })
+        }
+
+    },
+
+    mounted() {
+        // console.log(this.$router);
+        // console.log(this.$route);
+        this.getApartment();
+    },
+    computed: {
+        getImagePath() {
+            return store.imgBasePath + this.apartment.main_img;
         }
     }
 }
