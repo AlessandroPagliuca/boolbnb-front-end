@@ -35,7 +35,7 @@
                         <h3>Descrizione</h3>
                         <p>{{ apartment.description }}</p>
                     </div>
-                    <div class="preview card p-3">
+                    <!-- <div class="preview card p-3">
                         <div class="border shadow d-flex justify-content-around rounded-3 mb-5">
                             <Date />
                         </div>
@@ -48,6 +48,26 @@
                             <h6>Totale</h6>
                             <p>00,00 &euro;</p>
                         </div>
+                    </div> -->
+
+                    <div class="contatta">
+                        <h5>Contatta il proprietario per avere informazioni sulla disponibilità</h5>
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <!-- <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div> -->
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
                     </div>
 
                 </div>
@@ -124,4 +144,5 @@ export default {
 .image-box {
     width: 70%;
     // border: 1px solid black;
-}</style>
+}
+</style>
