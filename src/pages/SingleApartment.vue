@@ -27,7 +27,7 @@
                                     :class="'fa-brands fa-' + service.icon"></i><i v-else
                                     :class="'fa-solid fa-' + service.icon"></i> {{ service.name }}</div>
                         </div>
-                        <button class="btn btn-primary text-white">mostra tutti</button>
+                        <!-- <button class="btn btn-primary text-white">mostra tutti</button> -->
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6">

@@ -1,68 +1,67 @@
 <template>
-    <!-- about -->
     <div class="about">
-        <a class="bg_links social portfolio" href="https://www.rafaelalucas.com" target="_blank">
-            <span class="icon"></span>
-        </a>
-        <a class="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
-            <span class="icon"></span>
-        </a>
-        <a class="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
-            <span class="icon"></span>
-        </a>
-        <a class="bg_links logo"></a>
-    </div>
-    <!-- end about -->
+    <a class="bg_links social portfolio" href="https://www.rafaelalucas.com" target="_blank">
+       <span class="icon"></span>
+    </a>
+    <a class="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
+       <span class="icon"></span>
+    </a>
+    <a class="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
+       <span class="icon"></span>
+    </a>
+    <a class="bg_links logo"></a>
+ </div>
+ <!-- end about -->
 
-    <section class="wrapper">
+     <section class="wrapper">
 
-        <div class="container">
+         <div class="container">
 
-            <div id="scene" class="scene" data-hover-only="false">
+             <div id="scene" class="scene" data-hover-only="false">
 
 
-                <div class="circle" data-depth="1.2"></div>
+                 <div class="circle" data-depth="1.2"></div>
 
-                <div class="one" data-depth="0.9">
-                    <div class="content">
-                        <span class="piece"></span>
-                        <span class="piece"></span>
-                        <span class="piece"></span>
-                    </div>
-                </div>
+                 <div class="one" data-depth="0.9">
+                     <div class="content">
+                         <span class="piece"></span>
+                         <span class="piece"></span>
+                         <span class="piece"></span>
+                     </div>
+                 </div>
 
-                <div class="two" data-depth="0.60">
-                    <div class="content">
-                        <span class="piece"></span>
-                        <span class="piece"></span>
-                        <span class="piece"></span>
-                    </div>
-                </div>
+                 <div class="two" data-depth="0.60">
+                     <div class="content">
+                         <span class="piece"></span>
+                         <span class="piece"></span>
+                         <span class="piece"></span>
+                     </div>
+                 </div>
 
-                <div class="three" data-depth="0.40">
-                    <div class="content">
-                        <span class="piece"></span>
-                        <span class="piece"></span>
-                        <span class="piece"></span>
-                    </div>
-                </div>
+                 <div class="three" data-depth="0.40">
+                     <div class="content">
+                         <span class="piece"></span>
+                         <span class="piece"></span>
+                         <span class="piece"></span>
+                     </div>
+                 </div>
 
-                <p class="p404" data-depth="0.50">404</p>
-                <p class="p404" data-depth="0.10">404</p>
+                 <p class="p404" data-depth="0.50">404</p>
+                 <p class="p404" data-depth="0.10">404</p>
 
-            </div>
+             </div>
 
-            <div class="text">
-                <article>
-                    <p>Uh oh! Looks like you got lost. <br>Go back to the homepage if you dare!</p>
-                    <!-- <button>i dare!</button> -->
-                    <router-link :to="{ name: routeName }" class="button pt-2">i dare!</router-link>
-                </article>
-            </div>
+             <div class="text">
+                 <article>
+                     <p>Uh oh! Looks like you got lost. <br>Go back to the homepage if you dare!</p>
+                     <a href="{{ route('host.apartments.index') }}"><button>i dare!</button></a>
+                 </article>
+             </div>
 
-        </div>
-    </section>
+         </div>
+     </section>
 </template>
+
 
 <script>
 
@@ -76,11 +75,117 @@ export default {
     }
 }
 
-
 </script>
 
 <style lang="scss" scoped>
 @use '../assets/partials/variables' as *;
+
+.wrapper{
+    overflow: hidden;
+}
+
+main {
+    font-family: "Lexend Deca", sans-serif, Arial, Helvetica, sans-serif;
+    background-color: #fff1f1;
+}
+
+.border-pink {
+    border-color: $primary !important;
+
+    input {
+        border-color: $primary !important;
+    }
+}
+
+.d-inline {
+    display: inline-block;
+    color: $primary !important;
+}
+
+.primary-color {
+    color: $primary !important;
+}
+
+.navbar {
+    background-color: $black !important;
+    .nav-item {
+        a.nav-link {
+            color: $white;
+            border-bottom: 3px inset transparent;
+            transition: all 0.5s;
+
+            &:hover {
+                border-bottom: 3px inset $primary;
+                color: $primary !important;
+            }
+        }
+    }
+}
+
+.active {
+    color: $primary !important;
+}
+
+.box-card {
+    width: 350px !important;
+
+    border: 0;
+    box-shadow: 1px 1px 12px 6px rgba(103, 103, 104, 0.2);
+}
+
+.bg-pink {
+    background-color: $primary !important;
+}
+
+.bg-black {
+    background-color: $black !important;
+}
+
+.wave {
+    background-image: url(/public/img/wave.svg);
+    background-size: cover;
+    background-position: center;
+    height: 100px;
+    background-color: $black;
+}
+
+.wave-black {
+    background-image: url(/public/img/waveBlack.svg);
+    background-size: cover;
+    background-position: center;
+    height: 100px;
+    background-color: $primary;
+}
+
+.bg-dark-card {
+    background-color: #363a41 !important;
+}
+
+.fit-content {
+    width: fit-content;
+}
+
+.fs-small {
+    font-size: 14px !important;
+}
+
+.card {
+    min-height: 787px;
+}
+
+.bg-apartment {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, #ff385c 0%, #fe7991 47%, #ffbdc9 94%);
+}
+
+.apartment-vh{
+    height: calc(100vh - 76px);
+}
+
+.btn-hover:hover{
+    color: $white !important;
+}
+
 .about {
     $cubic: cubic-bezier(0.64, 0.01, 0.07, 1.65);
     $transition: 0.6s $cubic;
@@ -278,7 +383,7 @@ h6,
 p,
 ul,
 li,
-.button,
+button,
 a,
 i,
 input,
@@ -290,6 +395,7 @@ body {
     -webkit-tap-highlight-color: transparent;
     text-decoration: none;
     color: inherit;
+
 
     &:focus {
         outline: 0;
@@ -635,7 +741,7 @@ nav {
                     text-shadow: 6px 6px 10px $bg-03;
                 }
 
-                .button {
+                button {
                     height: 40px;
                     padding: 0 30px;
                     border-radius: 50px;
@@ -864,6 +970,19 @@ nav {
 
     }
 }
+
+// @media screen and (max-width: 1100px) {
+//     .card {
+//         min-height: 850px;
+//     }
+// }
+
+// @media screen and (max-width: 992px) {
+//     .card {
+//         min-height: 500px;
+//     }
+// }
+
 </style>
 
 <!-- 

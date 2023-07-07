@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div>
         <input class=" rounded-2" type="text" v-model="searchQuery" placeholder="Cerca per nome"
             @keyup.enter="filterAppartamenti">
         <!-- <ul> -->
