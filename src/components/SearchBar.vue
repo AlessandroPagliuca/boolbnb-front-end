@@ -1,8 +1,8 @@
 <template>
     <div class=" min-vh-100">
 
-        <div class="d-flex justify-content-center">
-            <div class="border-pink rounded-5 py-2 px-3 my-3 d-flex justify-content-between">
+        <div class="d-flex justify-content-center ">
+            <div class="border-pink rounded-5 py-2 px-3 my-3 d-flex justify-content-between bg-white">
                 <input class="border-0 no-outline" type="text" v-model.lazy="searchQuery" placeholder="Cerca per nome"
                     @keyup.enter="filterAppartamenti">
 
@@ -25,9 +25,11 @@
         <div>
             <!-- <ul> -->
             <!-- <li v-for="apartment in filteredAppartamenti" :key="apartment.id"> -->
-            <div v-if="isApartmentsRoute" class="row mb-4">
-                <ApartmentCard v-for="    apartment     in     filteredAppartamenti    " :key="apartment.id"
-                    :apartment="apartment" />
+            <div v-if="isApartmentsRoute" class="row mb-4 ">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 ps-5 ps-sm-0" v-for="apartment in filteredAppartamenti"
+                    :key="apartment.id">
+                    <ApartmentCard :apartment="apartment" />
+                </div>
 
             </div>
             <!-- {{ apartment.title }} -->

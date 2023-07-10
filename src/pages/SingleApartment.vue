@@ -1,4 +1,5 @@
 <template>
+
     <div class="row p-5" v-if="apartment">
         <div class="col-0 col-sm-1 col-md-1 col-lg-1 g-3 pb-4">
             <router-link :to="{ name: routeName }" class="btn btn-primary text-white rounded-5">
@@ -26,16 +27,15 @@
                                     v-if="service.icon == 'instagram fa-rotate-180'"
                                     :class="'fa-brands fa-' + service.icon"></i><i v-else
                                     :class="'fa-solid fa-' + service.icon"></i> {{ service.name }}</div>
+
                         </div>
-                        <!-- <button class="btn btn-primary text-white">mostra tutti</button> -->
                     </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
-                    <div class="description-box mb-5">
-                        <h3>Descrizione</h3>
-                        <p>{{ apartment.description }}</p>
-                    </div>
-                    <!-- <div class="preview card p-3">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                        <div class="description-box mb-5">
+                            <h3>Descrizione</h3>
+                            <p>{{ apartment.description }}</p>
+                        </div>
+                        <!-- <div class="preview card p-3">
                         <div class="border shadow d-flex justify-content-around rounded-3 mb-5">
                             <Date />
                         </div>
@@ -49,6 +49,7 @@
                             <p>00,00 &euro;</p>
                         </div>
                     </div> -->
+
 
                     <div class="w-100 card p-4 box-card ">
                         <div class="container">
@@ -186,6 +187,11 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/partials/variables' as *;
+
+.background {
+    background-color: $primary-subtle;
+
+}
 
 .image-box {
     width: 70%;

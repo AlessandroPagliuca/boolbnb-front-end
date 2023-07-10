@@ -2,7 +2,7 @@
   <div class="background">
 
     <div class="container">
-      <h2 class="text-center my-5 text-team">Conosci meglio il nostro Team!</h2>
+      <h2 class="text-center fw-bold display-2 t-padding text-team">Conosci meglio il nostro Team!</h2>
       <div class="row align-items-stretch">
         <div v-for="(team, index) in teams" :key="index" class="col-12 col-md-6 col-lg-4">
           <div class="cards-container d-flex justify-content-center">
@@ -61,6 +61,10 @@ export default {
 
 }
 
+.t-padding {
+  padding: 100px 0;
+}
+
 img {
   width: 280px;
   border-radius: 100%;
@@ -76,10 +80,9 @@ img {
   border: transparent;
   background-color: transparent;
 
-
   &:hover {
-    transform: scale(1.1);
-    box-shadow: 12px 12px 12px 5px rgba($primary, $alpha: 0.3);
+    transform: scale(1);
+    box-shadow: 0px 0px 12px 6px rgba($primary, $alpha: 0.3);
     border: rgba(0, 0, 0, 0.3);
 
   }
