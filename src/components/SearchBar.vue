@@ -1,5 +1,5 @@
 <template>
-    <div class="min-vh-100">
+    <div class="min-vh-100 pb-3">
         <div class="d-flex justify-content-center">
             <div class="border-pink box-input rounded-5 py-2 px-3 my-3 d-flex justify-content-between">
                 <input class="border-0 no-outline" type="text" v-model.lazy="searchQuery"
@@ -10,22 +10,28 @@
             </div>
         </div>
         <!--ora le icone hanno la funzione della checkbox precedente e quando ci clicchiamo cambia lo stile di esso per far capire all'utente il campo selezionato-->
-        <ul class="d-flex justify-content-around list-unstyled">
-            <li v-for="service in services" :key="service.icon" class="style-icon">
+        <div class="row align-items-center justify-content-start list-unstyled">
+            <div v-for="service in services" :key="service.icon" class="col-2 col-md-1 style-icon py-2">
                 <i :class="[service.icon === 'instagram fa-rotate-180' ? 'fa-brands fa-' + service.icon : 'fa-solid fa-' + service.icon]"
                     @click="toggleService(service)"
                     :style="{ backgroundColor: isSelected(service) ? '#FF385C' : '', color: isSelected(service) ? 'white' : '' }"></i>
-            </li>
-        </ul>
-
-
-
-
-        <div v-if="isApartmentsRoute" class="row mb-4">
-            <ApartmentCard v-for="apartment in resultAppartments" :key="apartment.id" :apartment="apartment" />
+            </div>
         </div>
-        <div v-if="resultAppartments.length === 0">
-            <p>Not apartments found.</p>
+
+
+
+
+
+        <div v-if="isApartmentsRoute" class="row align-items-center justify-content-start pb-4">
+
+            <ApartmentCard v-for="apartment in resultAppartments" :key="apartment.id" :apartment="apartment"
+                class="col-12 col-sm-6 col-lg-4 col-xl-3" />
+
+
+        </div>
+        <div v-if="resultAppartments.length === 0" class="mb-3">
+            <p class="fw-semibold text-uppercase text-danger">results :</p>
+            <p class="fw-semibold">Not apartments found.</p>
         </div>
 
         <MapComp />
