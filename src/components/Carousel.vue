@@ -16,7 +16,7 @@
         spaceBetween: 40,
     },
     '1024': {
-        slidesPerView: 3,
+        slidesPerView: 4,
         spaceBetween: 50,
     },
 }" class="mySwiper">
@@ -107,7 +107,7 @@ export default {
     /* background-color: rgba(0, 0, 0, 0.5); */
     background-color: rgba(255, 255, 255, 0.9);
     /* box-shadow: 1px 1px 12px 6px rgba(255, 255, 255, 0.4); */
-    box-shadow: 1px 1px 12px 6px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 12px 2px rgba(0, 0, 0, 0.4);
 }
 </style>
 

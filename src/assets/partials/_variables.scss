@@ -26,5 +26,8 @@ $primary-subtle: #fff1f1;
 }
 
 .border-pink {
-    border: 1px $primary inset;
+    border-color: $primary !important;
+    input {
+        border-color: $primary !important;
+    }
 }

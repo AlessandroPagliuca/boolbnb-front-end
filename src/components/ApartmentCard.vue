@@ -1,28 +1,33 @@
 <template>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-if="apartment.visible">
+    <div v-if="apartment.visible">
         <router-link class="text-decoration-none" :to="{ name: 'single-apartment', params: { slug: apartment.slug } }">
-            <div class="card border text-decoration-none">
-                <img class="img-fluid" style="height: 200px;" v-if="apartment.main_img.includes('http')"
+            <div class="card border overflow-hidden position-relative">
+                <img class="img-fluid " style="height: 200px;" v-if="apartment.main_img.includes('http')"
                     :src="apartment.main_img" alt="">
-                <img class="img-fluid" style="height: 200px;" v-else :src="getImagePath" :alt="apartment.title">
+                <img class="img-fluid " style="height: 200px;" v-else :src="getImagePath" :alt="apartment.title">
+                <span class="price fw-bold position-absolute p-2 badge ">{{ apartment.price }}
+                    &euro;</span>
                 <div class="card-body justify-content-between">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <div class="card-head pb-3 w-75">
+                            <div class="card-head pb-2 w-75">
                                 <h6 class="fw-bolder">{{ apartment.title }}</h6>
                             </div>
-                            <div class="card-text pb-2">
-                                <div class="mb-2 city">
-                                    <span class="fw-semibold">{{ apartment.city }} ,</span>
-                                    <span class="address d-block">{{ apartment.address }}</span>
+                            <div class="card-text">
+                                <div class="pb-4 city">
+                                    <span> <i class="fa-solid fa-person-shelter"></i> {{ apartment.rooms }}</span>
+                                    <span> | </span>
+                                    <span><i class="fa-solid fa-bed"></i> {{ apartment.beds }} </span>
                                 </div>
-                                <span> <i class="fa-solid fa-person-shelter"></i> {{ apartment.rooms }}</span>
-                                <span> | </span>
-                                <span><i class="fa-solid fa-bed"></i> {{ apartment.beds }}</span>
+                                <!-- <span class="price fw-bold">{{ apartment.price }} &euro;</span> -->
+
                             </div>
 
                         </div>
-                        <span class="price fw-bold">{{ apartment.price }} &euro;</span>
+                        <div>
+                            <span class="fw-semibold">{{ apartment.city }} ,</span>
+                            <span class="address d-block">{{ apartment.address }}</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,8 +61,8 @@ export default {
 }
 
 .card {
-    // width: 300px;
-    height: 380px;
+    max-width: 300px;
+    height: 300px;
     // margin-bottom: 50px;
     transition: all .5s;
     transition: all .5s;
@@ -80,10 +85,15 @@ export default {
 //     height: 70px;
 // }
 
-// .price {
-//     height: 60px;
-//     width: 100px;
-// }
+.price {
+    // height: 60px;
+    // width: 100px;
+    top: 0;
+    right: 0;
+    color: white;
+    background-color: $primary;
+    font-size: 13px;
+}
 
 // .city {
 //     width: 200px;
