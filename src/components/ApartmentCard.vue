@@ -1,6 +1,6 @@
 <template>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-if="apartment.visible">
-        <router-link :to="{ name: 'single-apartment', params: { slug: apartment.slug } }">
+        <router-link class="text-decoration-none" :to="{ name: 'single-apartment', params: { slug: apartment.slug } }">
             <div class="card mb-2 border">
                 <img class="img-fluid" style="height: 200px;" v-if="apartment.main_img.includes('http')"
                     :src="apartment.main_img" alt="">

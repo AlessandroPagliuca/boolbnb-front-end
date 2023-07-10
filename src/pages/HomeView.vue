@@ -1,10 +1,18 @@
 <template>
   <div class="">
     <div class="jumbotron position-relative">
-      <img class="img-fluid" src="\img\2008720-bellissimo-paesaggio-urbano-di-kobe-citta-giappone-gratuito-foto.jpg"
-        alt="jumbo">
+      <img class="img-fluid" src="\img\WhatsApp Image 2023-07-10 at 12.41.47.jpeg" alt="jumbo">
 
-      <!-- <SearchBar class="position-absolute"/>  NON FUNZIONA-->
+      <div class="position-absolute">
+        <h2 class="text-capitalize display-1 fw-bold t-dark text-center">
+          welcome to <br>
+        </h2>
+
+        <h1 class="text-uppercase fw-bolde fw-bolder t-dark display-1 ">boolBnB!</h1>
+
+
+
+      </div>
 
     </div>
   </div>
@@ -14,13 +22,6 @@
 
     <Carousel />
 
-    <h2 class="text-capitalize py-3">maps</h2>
-
-    <!-- mappa -->
-    <div class="pb-3 rounded-2 box-map">
-      <MapComp />
-
-    </div>
   </div>
 </template>
 
@@ -45,6 +46,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/partials/variables' as *;
+
 .box-map {
   overflow: hidden;
 }
@@ -61,6 +64,11 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .t-dark {
+    text-shadow: 5px 5px 3px rgba($color: #343a40, $alpha: 0.8);
+    color: #fb6f89;
   }
 }
 </style>
