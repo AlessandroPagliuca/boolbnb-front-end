@@ -1,5 +1,4 @@
 <template>
-
     <div class="row p-5" v-if="apartment">
         <div class="col-0 col-sm-1 col-md-1 col-lg-1 g-3 pb-4">
             <router-link :to="{ name: routeName }" class="btn btn-primary text-white rounded-5">
@@ -51,42 +50,44 @@
                     </div> -->
 
 
-                    <div class="w-100 card p-4 box-card ">
-                        <div class="container">
-                            <h5>Contatta il proprietario per avere informazioni sulla disponibilità</h5>
-                            <div v-if="success" class="alert alert-success text-start" role="alert">
-                                Messaggio inviato con successo!
-                            </div>
-                            <div class="row">
-                                <form @submit.prevent="sendForm()" class="col-12 text-start">
-                                    <div class="mb-3">
-                                        <input class="form-control border-pink rounded-5"
-                                            :class="{ 'is-invalid': errors.email }" type="text" name="email" id="email"
-                                            placeholder="name@example.com" v-model="email">
-                                        <p v-for="(error, index) in errors.email" :key="`message-error-${index}`"
-                                            class="invalid-feedback">
-                                            {{ error }}
-                                        </p>
-                                    </div>
-                                    <div class="mb-3">
-                                        <textarea class="form-control border-pink rounded-3"
-                                            :class="{ 'is-invalid': errors.message }" name="message" id="message" cols="30"
-                                            rows="10" placeholder="Message" v-model="message"></textarea>
-                                        <p v-for="(error, index) in errors.message" :key="`message-error-${index}`"
-                                            class="invalid-feedback">
-                                            {{ error }}
-                                        </p>
-                                    </div>
-                                    <button class="btn btn-lg btn-primary text-white" type="submit" :disabled="loading">{{
-                                        loading ?
-                                        'Sending...' : 'Send'
-                                    }}</button>
-                                </form>
+                        <div class="w-100 card p-4 box-card ">
+                            <div class="container">
+                                <h5>Contatta il proprietario per avere informazioni sulla disponibilità</h5>
+                                <div v-if="success" class="alert alert-success text-start" role="alert">
+                                    Messaggio inviato con successo!
+                                </div>
+                                <div class="row">
+                                    <form @submit.prevent="sendForm()" class="col-12 text-start">
+                                        <div class="mb-3">
+                                            <input class="form-control border-pink rounded-5"
+                                                :class="{ 'is-invalid': errors.email }" type="text" name="email" id="email"
+                                                placeholder="name@example.com" v-model="email">
+                                            <p v-for="(error, index) in errors.email" :key="`message-error-${index}`"
+                                                class="invalid-feedback">
+                                                {{ error }}
+                                            </p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <textarea class="form-control border-pink rounded-3"
+                                                :class="{ 'is-invalid': errors.message }" name="message" id="message"
+                                                cols="30" rows="10" placeholder="Message" v-model="message"></textarea>
+                                            <p v-for="(error, index) in errors.message" :key="`message-error-${index}`"
+                                                class="invalid-feedback">
+                                                {{ error }}
+                                            </p>
+                                        </div>
+                                        <button class="btn btn-lg btn-primary text-white" type="submit"
+                                            :disabled="loading">{{
+                                                loading ?
+                                                'Sending...' : 'Send'
+                                            }}</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
+
+
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -123,7 +124,7 @@ export default {
 
         }
     },
-    
+
     methods: {
         sendForm() {
             this.loading = true;
@@ -208,4 +209,5 @@ textarea:focus {
 
     border: 0;
     box-shadow: 2px 2px 12px 6px #fe385c55;
-}</style>
+}
+</style>
