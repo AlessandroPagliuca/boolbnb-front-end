@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class=" background">
     <div class="jumbotron position-relative">
       <img class="img-fluid" src="\img\2008720-bellissimo-paesaggio-urbano-di-kobe-citta-giappone-gratuito-foto.jpg"
         alt="jumbo">
@@ -9,7 +9,7 @@
     </div>
   </div>
   <!-- carosello -->
-  <div class="container-fluid  px-5 ">
+  <div class="container-fluid  px-5 background ">
     <h2 class="text-capitalize py-3">featured apartments</h2>
 
     <Carousel />
@@ -45,6 +45,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/partials/variables' as *;
+
+.background {
+  background-color: $primary-subtle;
+
+}
+
 .box-map {
   overflow: hidden;
 }
