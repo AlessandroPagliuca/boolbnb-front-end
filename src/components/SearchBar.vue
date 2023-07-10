@@ -1,5 +1,5 @@
 <template>
-    <div class=" min-vh-100">
+    <div class=" min-vh-100 pb-5">
 
         <div class="d-flex justify-content-center ">
             <div class="border-pink rounded-5 py-2 px-3 my-3 d-flex justify-content-between bg-white">
