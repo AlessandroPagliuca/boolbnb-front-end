@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class=" background">
     <div class="jumbotron position-relative">
       <img class="img-fluid" src="\img\WhatsApp Image 2023-07-10 at 12.41.47.jpeg" alt="jumbo">
 
@@ -24,7 +24,7 @@
     </div>
   </div>
   <!-- carosello -->
-  <div class="container-fluid  px-5 ">
+  <div class="container-fluid background  px-5 ">
     <h2 class="text-capitalize py-5 fw-bold display-4">featured apartments</h2>
 
     <Carousel />
@@ -56,6 +56,13 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/partials/variables' as *;
+
+@use '../assets/partials/variables' as *;
+
+.background {
+  background-color: $primary-subtle;
+
+}
 
 .box-map {
   overflow: hidden;
