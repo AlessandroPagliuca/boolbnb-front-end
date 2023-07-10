@@ -1,5 +1,5 @@
 <template>
-    <div class="body">
+    <div class="body background">
         <div class="container">
             <SearchBar />
         </div>
@@ -19,7 +19,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+@use '../assets/partials/variables' as *;
+
 .body {
     margin-top: 76px;
 }
+
+.background {
+    background-color: $primary-subtle;
+
+}
+
 </style>
