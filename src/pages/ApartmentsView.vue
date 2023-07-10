@@ -2,8 +2,6 @@
     <div class="body background">
         <div class="container">
             <SearchBar />
-
-
         </div>
     </div>
 </template>
@@ -21,6 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 @use '../assets/partials/variables' as *;
 
 .body {
@@ -31,4 +30,5 @@ export default {
     background-color: $primary-subtle;
 
 }
+
 </style>
