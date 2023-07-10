@@ -1,9 +1,9 @@
 <template>
     <div class="min-vh-100">
         <div class="d-flex justify-content-center">
-            <div class="border-pink rounded-5 py-2 px-3 my-3 d-flex justify-content-between">
-                <input class="border-0 no-outline" type="text" v-model.lazy="searchQuery" placeholder="Cerca per nome"
-                    @keyup.enter="filterAppartments" />
+            <div class="border-pink box-input rounded-5 py-2 px-3 my-3 d-flex justify-content-between">
+                <input class="border-0 no-outline" type="text" v-model.lazy="searchQuery"
+                    placeholder="Search city or address..." @keyup.enter="filterAppartments" />
                 <button class="btn btn-primary text-white rounded-circle fs-5" @click="filterAppartments">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
@@ -24,7 +24,7 @@
             <ApartmentCard v-for="apartment in resultAppartments" :key="apartment.id" :apartment="apartment" />
         </div>
         <div v-if="resultAppartments.length === 0">
-            <p>Nessun appartamento trovato.</p>
+            <p>Not apartments found.</p>
         </div>
 
         <MapComp />
@@ -123,9 +123,14 @@ export default {
 
 .no-outline {
     outline: none;
+    background-color: $primary-subtle;
 }
 
 .bg-pink {
     background-color: $primary;
+}
+
+.box-input {
+    border: 1px solid;
 }
 </style>
