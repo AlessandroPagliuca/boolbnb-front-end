@@ -9,15 +9,16 @@
                 </button>
             </div>
         </div>
-
-        <!--Filtri services-->
+        <!--ora le icone hanno la funzione della checkbox precedente e quando ci clicchiamo cambia lo stile di esso per far capire all'utente il campo selezionato-->
         <ul class="d-flex justify-content-around list-unstyled">
-            <li v-for="service in services" :key="service.icon">
-                <input type="checkbox" :value="service" v-model="selectedServices" />
-                <i v-if="service.icon === 'instagram fa-rotate-180'" :class="'fa-brands fa-' + service.icon"></i>
-                <i v-else :class="'fa-solid fa-' + service.icon"></i>
+            <li v-for="service in services" :key="service.icon" class="style-icon">
+                <i :class="[service.icon === 'instagram fa-rotate-180' ? 'fa-brands fa-' + service.icon : 'fa-solid fa-' + service.icon]"
+                    @click="toggleService(service)"
+                    :style="{ backgroundColor: isSelected(service) ? '#FF385C' : '', color: isSelected(service) ? 'white' : '' }"></i>
             </li>
         </ul>
+
+
 
 
         <div v-if="isApartmentsRoute" class="row mb-4">
@@ -56,6 +57,18 @@ export default {
         };
     },
     methods: {
+        toggleService(service) {
+            const index = this.selectedServices.indexOf(service);
+
+            if (index === -1) {
+                this.selectedServices.push(service); // aggiungi il servizio selezionato
+            } else {
+                this.selectedServices.splice(index, 1); // rimuovi il servizio deselezionato
+            }
+        },
+        isSelected(service) {
+            return this.selectedServices.includes(service);
+        },
         /**
          * function per filtrare i risultati tramite la ricerca usufruendo
          * servizi, città, indirizzo 
@@ -132,5 +145,22 @@ export default {
 
 .box-input {
     border: 1px solid;
+}
+
+.style-icon {
+
+
+    i {
+        padding: 5px;
+        border-radius: 50%;
+        font-size: 16px;
+        color: #222222;
+        transition: all .5s;
+
+        &:hover {
+            background-color: $primary;
+            color: white;
+        }
+    }
 }
 </style>
