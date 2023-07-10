@@ -1,5 +1,8 @@
 <template>
     <div class=" min-vh-100">
+        <div class="load d-flex align-items-center justify-content-center" v-if="store.loader">
+            <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+        </div>
 
         <div class="d-flex justify-content-center ">
             <div class="border-pink rounded-5 py-2 px-3 my-3 d-flex justify-content-between bg-white">
@@ -67,20 +70,27 @@ export default {
     },
     methods: {
         async filterAppartamenti() {
+
             try {
+
                 const response = await axios.get(`${store.apiURL}/apartments`);
                 this.apartments = response.data.data;
                 this.$router.push({
                     path: '/apartments',
                     query: { q: this.searchQuery },
+                }).finally(() => {
+                    this.store.loader = false
                 });
             } catch (error) {
                 console.error('Errore durante la chiamata al backend:', error);
             }
         },
         async getData() {
+
             try {
                 const response = await axios.get(`${store.apiURL}/apartments`, {
+                }).finally(() => {
+                    this.store.loader = false
                 });
                 this.apartments = response.data.data;
             } catch (error) {
@@ -91,6 +101,7 @@ export default {
     computed: {
         filteredAppartamenti() {
             // Filtra gli appartamenti in base alla ricerca dell'utente
+
             const searchQuery = this.searchQuery.trim();
             return this.apartments.filter(apartment =>
                 apartment.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -102,6 +113,7 @@ export default {
         },
     },
     mounted() {
+        store.loader = true
         this.getData();
     }
 }
@@ -116,5 +128,19 @@ export default {
 
 .bg-pink {
     background-color: $primary;
+}
+
+.load {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    z-index: 10000;
+
+    .fa-spinner {
+        font-size: 10rem;
+    }
 }
 </style>
