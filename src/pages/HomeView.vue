@@ -9,8 +9,8 @@
         </h2>
         <h1 class="text-uppercase fw-bolde fw-bolder t-dark display-1 ">boolBnB!</h1>
 
-        <div class="t-button shadow rounded-2"><router-link :to="{ name: 'apartments' }"
-            class="text-decoration-none text-light fw-bold d-flex justify-content-between align-items-center">
+        <div class="t-button shadow rounded-5"><router-link :to="{ name: 'apartments' }"
+            class="text-decoration-none fw-bold d-flex justify-content-between align-items-center">
             <div class="px-2">
               See all
               apartments
@@ -25,7 +25,7 @@
   </div>
   <!-- carosello -->
   <div class="container-fluid  px-5 ">
-    <h2 class="text-capitalize py-3">featured apartments</h2>
+    <h2 class="text-capitalize py-5 fw-bold display-4">featured apartments</h2>
 
     <Carousel />
 
@@ -68,6 +68,8 @@ export default {
   align-items: center;
   justify-content: center;
   margin-top: 76px;
+  background-color: rgba($color: #000000, $alpha: 1);
+  z-index: 10;
 
   img {
     width: 100%;
@@ -81,13 +83,21 @@ export default {
   }
 
   .t-button {
-    background-color: $primary;
+    background-color: transparent;
     width: 100%;
     font-size: 8px;
+    transition: all .5s;
+
+    a {
+      color: $primary;
+      transition: all .5s;
+    }
 
     i {
       font-size: 18px;
     }
+
+    border: 2px solid $primary;
 
     @media screen {
       padding: .5rem;
@@ -119,6 +129,41 @@ export default {
 
     }
 
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+
+      25% {
+        transform: translateY(-10px);
+      }
+
+      50% {
+        transform: translateY(0);
+      }
+
+      75% {
+        transform: translateY(-5px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+
+    &:hover {
+      background-color: $primary;
+
+      a {
+        color: white;
+      }
+
+      .fa-magnifying-glass {
+        animation: bounce 0.5s .75s infinite;
+      }
+
+    }
 
   }
 }
