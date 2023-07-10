@@ -41,6 +41,84 @@ const teams = [
     link2: "https://github.com/anashamimi",
     profile_img: "/team/anas.jpeg",
   },
-]
+];
 
-export { teams }
+const services = [
+  {
+    name: "Wi-Fi gratuito",
+    icon: "wifi",
+  },
+  {
+    name: "Parcheggio privato",
+    icon: "parking",
+  },
+  {
+    name: "Piscina",
+    icon: "swimmer",
+  },
+  {
+    name: "Aria condizionata",
+    icon: "wind",
+  },
+  {
+    name: "Colazione inclusa",
+    icon: "coffee",
+  },
+  {
+    name: "Servizio di pulizia",
+    icon: "broom",
+  },
+  {
+    name: "Palestra",
+    icon: "dumbbell",
+  },
+  {
+    name: "Vista Mare",
+    icon: "water",
+  },
+  {
+    name: "Giardino",
+    icon: "leaf",
+  },
+  {
+    name: "Barbecue",
+    icon: "stroopwafel",
+  },
+  {
+    name: "Riscaldamento",
+    icon: "temperature-high",
+  },
+  {
+    name: "Patio o balcone",
+    icon: "house-chimney-window",
+  },
+  {
+    name: "Biancheria da letto",
+    icon: "rug",
+  },
+  {
+    name: "Doccia",
+    icon: "shower",
+  },
+  {
+    name: "Vasca",
+    icon: "bath",
+  },
+  {
+    name: "Lavatrice",
+    icon: "instagram fa-rotate-180",
+  },
+  {
+    name: "Asciugatrice",
+    icon: "instagram fa-rotate-180",
+  },
+  {
+    name: "TV",
+    icon: "tv",
+  },
+  {
+    name: "Cucina",
+    icon: "kitchen-set",
+  },
+];
+export { teams, services };
