@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-if="apartment.visible">
+    <div v-if="apartment.visible">
         <router-link class="text-decoration-none" :to="{ name: 'single-apartment', params: { slug: apartment.slug } }">
             <div class="card border overflow-hidden position-relative">
                 <img class="img-fluid " style="height: 200px;" v-if="apartment.main_img.includes('http')"
@@ -61,7 +61,7 @@ export default {
 }
 
 .card {
-    // width: 300px;
+    max-width: 300px;
     height: 300px;
     // margin-bottom: 50px;
     transition: all .5s;
