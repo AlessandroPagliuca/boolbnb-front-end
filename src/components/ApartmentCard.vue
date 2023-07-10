@@ -65,7 +65,6 @@ export default {
     height: 300px;
     // margin-bottom: 50px;
     transition: all .5s;
-    transition: all .5s;
     transform: scale(0.9);
     border: transparent;
     background-color: transparent;
