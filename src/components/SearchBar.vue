@@ -26,8 +26,10 @@
             <!-- <ul> -->
             <!-- <li v-for="apartment in filteredAppartamenti" :key="apartment.id"> -->
             <div v-if="isApartmentsRoute" class="row mb-4">
-                <ApartmentCard v-for="    apartment     in     filteredAppartamenti    " :key="apartment.id"
-                    :apartment="apartment" />
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-for="apartment in filteredAppartamenti"
+                    :key="apartment.id">
+                    <ApartmentCard :apartment="apartment" />
+                </div>
 
             </div>
             <!-- {{ apartment.title }} -->
