@@ -1,10 +1,10 @@
 <template>
   <HeaderComp />
-  <div class="margin">
+  <div class="margin position-relative min-vh-100">
     <RouterView></RouterView>
   </div>
 
-  <FooterComp  class="footer-class"/>
+  <FooterComp class="footer-class" />
 </template>
 
 <script>

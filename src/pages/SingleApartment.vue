@@ -1,13 +1,16 @@
 <template>
+    <div class="load d-flex align-items-center justify-content-center" v-if="store.loader">
+        <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+    </div>
     <div class="row p-5" v-if="apartment">
-        <div class="col-0 col-sm-1 col-md-1 col-lg-1 g-3 pb-4">
+        <div class="col-1 g-3 pb-4">
             <router-link :to="{ name: routeName }" class="btn btn-primary text-white rounded-5">
                 <i class="fa-solid fa-arrow-left"></i>
             </router-link>
         </div>
         <div class="col-11">
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-5">
+                <div class="col-12 col-lg-6 mb-5">
                     <div class="image-box mb-3">
                         <img class="img-fluid" v-if="apartment.main_img.includes('http')" :src="apartment.main_img" alt="">
                         <img class="img-fluid" v-else :src="getImagePath" :alt="apartment.title">
@@ -29,7 +32,8 @@
 
                         </div>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+
+                    <div class="col-12 col-lg-6">
                         <div class="description-box mb-5">
                             <h3>Descrizione</h3>
                             <p>{{ apartment.description }}</p>
@@ -106,6 +110,7 @@ export default {
 
     data() {
         return {
+            store,
             label: 'Apartments',
             routeName: 'apartments',
             apartment: null,
@@ -164,7 +169,9 @@ export default {
                 console.log(error);
                 console.log(error.response.data);
                 this.$router.push({ name: 'not-found', query: { e: error.response.data.message } });
-            })//.finally(() => {
+            }).finally(() => {
+                this.store.loader = false
+            });//.finally(() => {
             //     setTimeout(() => {
             //         this.isLoading = false;
             //     }, 2000);
@@ -176,6 +183,7 @@ export default {
     mounted() {
         // console.log(this.$router);
         // console.log(this.$route);
+        store.loader = true
         this.getApartment();
     },
     computed: {
@@ -209,5 +217,22 @@ textarea:focus {
 
     border: 0;
     box-shadow: 2px 2px 12px 6px #fe385c55;
+}
+
+.load {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    z-index: 10000;
+
+    .fa-spinner {
+        font-size: 10rem;
+
+
+
+    }
 }
 </style>

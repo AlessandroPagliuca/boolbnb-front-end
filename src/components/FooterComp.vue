@@ -6,36 +6,36 @@
           <div class="col-md-8">
             <h6>
               Crea l'inserzione per il tuo appartamento.
-              <a href="http://127.0.0.1:8000/" class="fw-semibold d-block m-2">Diventa un membro ufficiale della nostra
+              <a href="http://127.0.0.1:8000/" class="fw-semibold d-block p-2">Diventa un membro ufficiale della nostra
                 famiglia.</a>
               <span class="fw-bold">Sii un Boolbnbneaner</span> .
             </h6>
           </div>
         </div>
         <hr class="my-5" />
-        <section class="text-center mb-4">
+        <section class="text-center pb-3">
           <div class="d-flex justify-content-around">
             <a class="nav-item" v-for="item in menu" :key="item.routeName">
               <router-link :to="{ name: item.routeName }" class="nav-link mx-2" active-class="active"> Team 3 with
                 <span>&hearts;</span> </router-link>
             </a>
             <div>
-              <a href="" class="text-white me-4">
+              <a href="" class="text-white pe-4">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="" class="text-white me-4">
+              <a href="" class="text-white pe-4">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="" class="text-white me-4">
+              <a href="" class="text-white pe-4">
                 <i class="fab fa-google"></i>
               </a>
-              <a href="" class="text-white me-4">
+              <a href="" class="text-white pe-4">
                 <i class="fab fa-instagram"></i>
               </a>
-              <a href="" class="text-white me-4">
+              <a href="" class="text-white pe-4">
                 <i class="fab fa-linkedin"></i>
               </a>
-              <a href="" class="text-white me-4">
+              <a href="" class="text-white pe-4">
                 <i class="fab fa-github"></i>
               </a>
             </div>
