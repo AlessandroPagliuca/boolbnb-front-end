@@ -167,7 +167,7 @@ export default {
 
     .fa-spinner {
         font-size: 10rem;
-
+        color: $primary;
 
 
     }
