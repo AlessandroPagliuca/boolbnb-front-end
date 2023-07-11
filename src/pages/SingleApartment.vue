@@ -169,12 +169,11 @@ export default {
     },
 
     mounted() {
-        // console.log(this.$router);
-        // console.log(this.$route);
+
         window.scrollTo(0, 0);
+
         store.loader = true;
         this.getApartment();
-
     },
     computed: {
         getImagePath() {
