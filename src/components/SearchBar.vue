@@ -1,7 +1,7 @@
 <template>
     <div class="min-vh-100 pb-3">
         <div class="load d-flex align-items-center justify-content-center" v-if="store.loader">
-            <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+            <LoaderComp/>
         </div>
         <div class="d-flex justify-content-center">
             <div class="border-pink box-input rounded-5 py-2 px-2 my-3 d-flex justify-content-between">
@@ -62,12 +62,14 @@ import { store } from '../store';
 import ApartmentCard from './ApartmentCard.vue';
 import { services } from "../data/data";
 import MapComp from './MapComp.vue';
+import LoaderComp from './LoaderComp.vue';
 
 export default {
     name: 'SearchBar',
     components: {
         ApartmentCard,
         MapComp,
+        LoaderComp,
     },
     data() {
         return {
