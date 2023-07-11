@@ -49,7 +49,7 @@ const services = [
     icon: "wifi",
   },
   {
-    name: "Private parking",
+    name: "parking",
     icon: "parking",
   },
   {
@@ -58,19 +58,19 @@ const services = [
   },
   {
     name: "Air conditioning",
-    icon: "wind",
+    icon: "snowflake",
   },
   {
-    name: "Breakfast included",
+    name: "Breakfast",
     icon: "coffee",
-  },
-  {
-    name: "Cleaning service",
-    icon: "broom",
   },
   {
     name: "Gym",
     icon: "dumbbell",
+  },
+  {
+    name: "Cleaning",
+    icon: "broom",
   },
   {
     name: "Sea view",
@@ -89,11 +89,15 @@ const services = [
     icon: "temperature-high",
   },
   {
-    name: "Patio or balcony",
+    name: "Tub",
+    icon: "bath",
+  },
+  {
+    name: "balcony",
     icon: "house-chimney-window",
   },
   {
-    name: "Change of sheets and towels everyday",
+    name: "towels",
     icon: "rug",
   },
   {
@@ -101,16 +105,12 @@ const services = [
     icon: "shower",
   },
   {
-    name: "Tub",
-    icon: "bath",
-  },
-  {
     name: "Washing machine",
-    icon: "instagram fa-rotate-180",
+    icon: "soap",
   },
   {
     name: "Dryer",
-    icon: "instagram fa-rotate-180",
+    icon: "wind",
   },
   {
     name: "TV",

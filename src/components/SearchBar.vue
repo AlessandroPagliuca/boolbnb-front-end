@@ -4,7 +4,7 @@
             <LoaderComp/>
         </div>
         <div class="d-flex justify-content-center">
-            <div class="border-pink box-input rounded-5 py-2 px-3 my-3 d-flex justify-content-between">
+            <div class="border-pink box-input rounded-5 py-2 px-2 my-3 d-flex justify-content-between">
                 <input class="border-0 no-outline" type="text" v-model.lazy="searchQuery"
                     placeholder="Search city or address..." @keyup.enter="filterAppartments" />
                 <button class="btn btn-primary text-white rounded-circle fs-5" @click="filterAppartments">
@@ -14,11 +14,25 @@
         </div>
         <!--ora le icone hanno la funzione della checkbox precedente e quando ci clicchiamo cambia lo stile di esso per far capire all'utente il campo selezionato-->
         <div class="row align-items-center justify-content-start list-unstyled">
-            <div v-for="service in services" :key="service.icon" class="col-2 col-md-1 style-icon py-2">
+            <div v-for="service in services" :key="service.icon"
+                class="col-2 col-md-1 style-icon py-2 mb-3 position-relative">
                 <i :class="[service.icon === 'instagram fa-rotate-180' ? 'fa-brands fa-' + service.icon : 'fa-solid fa-' + service.icon]"
                     @click="toggleService(service)"
-                    :style="{ backgroundColor: isSelected(service) ? '#FF385C' : '', color: isSelected(service) ? 'white' : '' }"></i>
+                    :style="{ backgroundColor: isSelected(service) ? '#FF385C' : '', color: isSelected(service) ? 'white' : '' }">
+
+                    <div class="drop-icon rounded-3 p-1">
+                        {{ service.name }}
+
+
+                    </div>
+
+                    <div class="spunta"> &#9650;</div>
+                </i>
+
+
             </div>
+
+
         </div>
 
 
@@ -183,7 +197,31 @@ export default {
 }
 
 .style-icon {
+    .drop-icon {
+        border: 2px solid $primary;
+        position: absolute;
+        top: 40px;
+        left: 10px;
+        opacity: 0;
+        transition: all .5;
+        font-size: 10px;
+        background-color: $primary-subtle;
+        z-index: 10;
+        transition: all .5s;
 
+
+    }
+
+    .spunta {
+        color: $primary;
+        position: absolute;
+        top: 32px;
+        left: 15px;
+        font-size: 14px;
+        opacity: 0;
+        transition: all .5s;
+
+    }
 
     i {
         padding: 5px;
@@ -195,9 +233,22 @@ export default {
         &:hover {
             background-color: $primary;
             color: white;
+
+            .drop-icon {
+                opacity: 1;
+                color: #000000
+            }
+
+            .spunta {
+                opacity: 1;
+            }
         }
 
 
     }
+
+
+
+
 }
 </style>
