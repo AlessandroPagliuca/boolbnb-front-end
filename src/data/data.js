@@ -93,7 +93,7 @@ const services = [
     icon: "bath",
   },
   {
-    name: "balcony",
+    name: "Patio",
     icon: "house-chimney-window",
   },
   {
