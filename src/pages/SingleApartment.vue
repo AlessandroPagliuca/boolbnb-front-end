@@ -224,4 +224,22 @@ textarea {
 
     }
 }
+
+a:hover {
+    .fa-arrow-left {
+        animation: slide1 1s ease-in-out infinite;
+    }
+}
+
+@keyframes slide1 {
+
+    0%,
+    100% {
+        transform: translate(5px, 0);
+    }
+
+    50% {
+        transform: translate(-5px, 0);
+    }
+}
 </style>
