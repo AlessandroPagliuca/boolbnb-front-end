@@ -69,11 +69,9 @@
                                                 {{ error }}
                                             </p>
                                         </div>
-                                        <button class="btn btn-lg btn-primary text-white" type="submit"
-                                            :disabled="loading">{{
-                                                loading ?
-                                                'Sending...' : 'Send'
-                                            }}</button>
+                                        <button class="btn btn-lg btn-primary text-white" type="submit" :disabled="loading">
+                                            {{ loading ? 'Sending...' : 'Send' }}
+                                        </button>
                                     </form>
                                 </div>
                             </div>
@@ -108,17 +106,12 @@ export default {
             loading: false,
             success: false,
             errors: {}
-            // menu: [
-            //     {
-            //         label: 'Prenota',
-            //         routeName: 'payment-page'
-            //     },
-            // ]
 
         }
     },
 
     methods: {
+
         sendForm() {
             this.loading = true;
             const data = {
@@ -129,18 +122,29 @@ export default {
             // pulisco l'array con i messaggi
             this.errors = {};
 
-            axios.post(`${this.apiUrl}/messages`, data).then((response) => {
-                this.success = response.data.success;
-                if (!this.success) {
-                    this.errors = response.data.errors;
-                } else {
-                    // ripulisco i campi di input
-                    this.email = '';
-                    this.message = '';
-                }
-                this.loading = false;
-            });
+            axios
+                .post(`${this.apiUrl}/apartment/${this.$route.params.slug}/messages`, data)
+                .then(response => {
+                    this.success = response.data.success;
+                    if (this.success) {
+                        this.errors = response.data.errors;
+                    } else {
+                        // ripulisco i campi di input
+                        this.email = '';
+                        this.message = '';
+                    }
+                })
+                .catch(error => {
+                    // Gestisci l'errore della chiamata API
+                    console.error(error);
+                    // Imposta un messaggio di errore generico
+                    this.errors.generic = 'An error occurred. Please try again later.';
+                })
+                .finally(() => {
+                    this.loading = false;
+                });
         },
+
 
         getApartment() {
             axios.get(`${this.apiUrl}/apartment/${this.$route.params.slug}`).then((res) => {
