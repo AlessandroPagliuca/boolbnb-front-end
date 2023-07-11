@@ -14,7 +14,8 @@
         </div>
         <!--ora le icone hanno la funzione della checkbox precedente e quando ci clicchiamo cambia lo stile di esso per far capire all'utente il campo selezionato-->
         <div class="row align-items-center justify-content-start list-unstyled">
-            <div v-for="service in services" :key="service.icon" class="col-2 col-md-1 style-icon py-2 position-relative">
+            <div v-for="service in services" :key="service.icon"
+                class="col-2 col-md-1 style-icon py-2 mb-3 position-relative">
                 <i :class="[service.icon === 'instagram fa-rotate-180' ? 'fa-brands fa-' + service.icon : 'fa-solid fa-' + service.icon]"
                     @click="toggleService(service)"
                     :style="{ backgroundColor: isSelected(service) ? '#FF385C' : '', color: isSelected(service) ? 'white' : '' }">
@@ -214,7 +215,7 @@ export default {
         position: absolute;
         top: 32px;
         left: 15px;
-        font-size: 10px;
+        font-size: 14px;
         opacity: 0;
         transition: all .5s;
 

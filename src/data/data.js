@@ -65,12 +65,12 @@ const services = [
     icon: "coffee",
   },
   {
-    name: "Cleaning",
-    icon: "broom",
-  },
-  {
     name: "Gym",
     icon: "dumbbell",
+  },
+  {
+    name: "Cleaning",
+    icon: "broom",
   },
   {
     name: "Sea view",
@@ -89,6 +89,10 @@ const services = [
     icon: "temperature-high",
   },
   {
+    name: "Tub",
+    icon: "bath",
+  },
+  {
     name: "balcony",
     icon: "house-chimney-window",
   },
@@ -99,10 +103,6 @@ const services = [
   {
     name: "Shower",
     icon: "shower",
-  },
-  {
-    name: "Tub",
-    icon: "bath",
   },
   {
     name: "Washing machine",
