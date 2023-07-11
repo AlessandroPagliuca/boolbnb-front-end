@@ -51,6 +51,11 @@ export default {
   methods: {
 
   },
+  mounted() {
+
+    window.scrollTo(0, 0);
+
+  },
 }
 </script>
 
