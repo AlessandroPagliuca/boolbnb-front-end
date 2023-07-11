@@ -74,6 +74,7 @@ export default {
             } else {
                 this.selectedServices.splice(index, 1); // rimuovi il servizio deselezionato
             }
+            this.filterAppartments();
         },
         isSelected(service) {
             return this.selectedServices.includes(service);
@@ -100,10 +101,11 @@ export default {
                 }
                 // Filtra gli appartamenti in base ai servizi selezionati
                 if (this.selectedServices.length > 0) {
-                    const selectedServices = this.selectedServices.map(service => service.name);
-                    resultAppartments = resultAppartments.filter(apartment =>
-                        apartment.services.some(service => selectedServices.includes(service.name))
-                    );
+                    const selectedServiceNames = this.selectedServices.map(service => service.name);
+                    resultAppartments = resultAppartments.filter(apartment => {
+                        const apartmentServiceNames = apartment.services.map(service => service.name);
+                        return selectedServiceNames.every(serviceName => apartmentServiceNames.includes(serviceName));
+                    });
                 }
                 this.resultAppartments = resultAppartments;
                 this.$router.push({
