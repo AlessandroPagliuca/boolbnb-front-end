@@ -58,7 +58,7 @@ const services = [
   },
   {
     name: "Air conditioning",
-    icon: "wind",
+    icon: "snowflake",
   },
   {
     name: "Breakfast",
@@ -106,11 +106,11 @@ const services = [
   },
   {
     name: "Washing machine",
-    icon: "instagram fa-rotate-180",
+    icon: "soap",
   },
   {
     name: "Dryer",
-    icon: "instagram fa-rotate-180",
+    icon: "wind",
   },
   {
     name: "TV",
