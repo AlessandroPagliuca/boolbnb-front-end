@@ -85,7 +85,11 @@ span {
   color: $primary;
 }
 
-.d-block:hover {
-  color: $primary;
+.d-block {
+  transition: all .5s;
+
+  &:hover {
+    color: $primary;
+  }
 }
 </style>
