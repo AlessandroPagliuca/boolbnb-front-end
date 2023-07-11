@@ -2,7 +2,7 @@
     <div class="load d-flex align-items-center justify-content-center" v-if="store.loader">
         <i class="fa-solid fa-spinner fa-spin-pulse"></i>
     </div>
-    <div class="row p-5" v-if="apartment">
+    <div class="row p-5 page" v-if="apartment">
         <div class="col-1 pb-4">
             <router-link :to="{ name: routeName }" class="btn btn-primary text-white rounded-5">
                 <i class="fa-solid fa-arrow-left"></i>
@@ -181,6 +181,10 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/partials/variables' as *;
+
+// .page{
+//     overflow-x: hidden;
+// }
 
 .background {
     background-color: $primary-subtle;
