@@ -4,7 +4,7 @@
             <i class="fa-solid fa-spinner fa-spin-pulse"></i>
         </div>
         <div class="d-flex justify-content-center">
-            <div class="border-pink box-input rounded-5 py-2 px-3 my-3 d-flex justify-content-between">
+            <div class="border-pink box-input rounded-5 py-2 px-2 my-3 d-flex justify-content-between">
                 <input class="border-0 no-outline" type="text" v-model.lazy="searchQuery"
                     placeholder="Search city or address..." @keyup.enter="filterAppartments" />
                 <button class="btn btn-primary text-white rounded-circle fs-5" @click="filterAppartments">
@@ -21,9 +21,11 @@
 
                     <div class="drop-icon rounded-3 p-1">
                         {{ service.name }}
+
+
                     </div>
 
-
+                    <div class="spunta"> &#9650;</div>
                 </i>
 
 
@@ -195,7 +197,7 @@ export default {
     .drop-icon {
         border: 2px solid $primary;
         position: absolute;
-        top: 32px;
+        top: 40px;
         left: 10px;
         opacity: 0;
         transition: all .5;
@@ -204,6 +206,17 @@ export default {
         z-index: 10;
         transition: all .5s;
 
+
+    }
+
+    .spunta {
+        color: $primary;
+        position: absolute;
+        top: 32px;
+        left: 15px;
+        font-size: 10px;
+        opacity: 0;
+        transition: all .5s;
 
     }
 
@@ -222,12 +235,16 @@ export default {
                 opacity: 1;
                 color: #000000
             }
+
+            .spunta {
+                opacity: 1;
+            }
         }
 
 
     }
 
-    &:hover {}
+
 
 
 }
