@@ -1,6 +1,6 @@
 <template>
   <HeaderComp />
-  <div class="margin position-relative">
+  <div class="margin position-relative min-vh-100">
     <RouterView></RouterView>
   </div>
 

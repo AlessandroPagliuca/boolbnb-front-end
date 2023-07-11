@@ -65,7 +65,6 @@ export default {
     height: 300px;
     // margin-bottom: 50px;
     transition: all .5s;
-    transition: all .5s;
     transform: scale(0.8);
     border: transparent;
     background-color: transparent;
@@ -102,19 +101,5 @@ export default {
 .address {
     font-size: 12px;
     // margin-top: 2px;
-}
-
-.load {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    top: 0;
-    right: 0;
-    background-color: rgba($color: #000000, $alpha: 0.6);
-    z-index: 10000;
-
-    .fa-spinner {
-        font-size: 10rem;
-    }
 }
 </style>

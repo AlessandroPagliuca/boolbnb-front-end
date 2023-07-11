@@ -3,6 +3,33 @@ $primary: #ff385c;
 $white: #ffffff;
 $black: #222222;
 $primary-subtle: #fff1f1;
+//SCROLLBAR
+$scrollbar-width: 8px;
+$scrollbar-thumb-color: #ff385c;
+$scrollbar-thumb-hover-color: #f14766;
+$scrollbar-track-color: #222222;
+$scrollbar-border-radius: 5px;
+
+* {
+    &::-webkit-scrollbar {
+        width: $scrollbar-width;
+        background-color: $scrollbar-track-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-thumb-color;
+        border-radius: $scrollbar-border-radius;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: $scrollbar-thumb-hover-color;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $scrollbar-track-color;
+        border-radius: $scrollbar-border-radius;
+    }
+}
 
 #app {
     font-family: "Lexend Deca", sans-serif, Arial, Helvetica, sans-serif !important;
@@ -26,5 +53,9 @@ $primary-subtle: #fff1f1;
 }
 
 .border-pink {
-    border: 1px $primary inset;
+    border-color: $primary !important;
+
+    input {
+        border-color: $primary !important;
+    }
 }
