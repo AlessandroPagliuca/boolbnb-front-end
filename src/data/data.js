@@ -65,7 +65,7 @@ const services = [
     icon: "coffee",
   },
   {
-    name: "Breakfast included",
+    name: "Cleaning service",
     icon: "broom",
   },
   {
