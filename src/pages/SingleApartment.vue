@@ -3,19 +3,19 @@
         <i class="fa-solid fa-spinner fa-spin-pulse"></i>
     </div>
     <div class="row p-5" v-if="apartment">
-        <div class="col-1 g-3 pb-4">
+        <div class="col-1 pb-4">
             <router-link :to="{ name: routeName }" class="btn btn-primary text-white rounded-5">
                 <i class="fa-solid fa-arrow-left"></i>
             </router-link>
         </div>
         <div class="col-11">
             <div class="row">
-                <div class="col-12 col-lg-6 mb-5">
-                    <div class="image-box mb-3">
+                <div class="col-12 col-lg-6 pb-5">
+                    <div class="image-box pb-3">
                         <img class="img-fluid" v-if="apartment.main_img.includes('http')" :src="apartment.main_img" alt="">
                         <img class="img-fluid" v-else :src="getImagePath" :alt="apartment.title">
                     </div>
-                    <div class="mb-4">
+                    <div class="pb-4">
                         <p>{{ apartment.title }}
                             <br> {{ apartment.city }} {{ apartment.country }} {{ apartment.address }}
                             <br> {{ apartment.rooms }} <i class="fa-solid fa-person-shelter"></i> | {{ apartment.beds }} <i
@@ -24,7 +24,7 @@
                     </div>
                     <div class="services-box">
                         <h4>Servizi</h4>
-                        <div class="row mt-1 mb-3">
+                        <div class="row pt-1 pb-3">
                             <div v-for="(service, index) in apartment.services" class="col-6"><i
                                     v-if="service.icon == 'instagram fa-rotate-180'"
                                     :class="'fa-brands fa-' + service.icon"></i><i v-else
@@ -35,12 +35,12 @@
                 </div>
 
                 <div class="col-12 col-lg-6">
-                    <div class="description-box mb-5">
+                    <div class="description-box pb-5">
                         <h3>Descrizione</h3>
                         <p>{{ apartment.description }}</p>
                     </div>
 
-                    <div class="w-100 card p-4 box-card ">
+                    <div class="w-75 card p-4 box-card ">
                         <div class="container">
                             <h5>Contatta il proprietario per avere informazioni sulla disponibilità</h5>
                             <div v-if="success" class="alert alert-success text-start" role="alert">
@@ -48,7 +48,7 @@
                             </div>
                             <div class="row">
                                 <form @submit.prevent="sendForm()" class="col-12 text-start">
-                                    <div class="mb-3">
+                                    <div class="pb-3">
                                         <input class="form-control border-pink rounded-5"
                                             :class="{ 'is-invalid': errors.email }" type="text" name="email" id="email"
                                             placeholder="name@example.com" v-model="email">
@@ -57,7 +57,7 @@
                                             {{ error }}
                                         </p>
                                     </div>
-                                    <div class="mb-3">
+                                    <div class="pb-3">
                                         <textarea class="form-control border-pink rounded-3"
                                             :class="{ 'is-invalid': errors.message }" name="message" id="message" cols="30"
                                             rows="10" placeholder="Message" v-model="message"></textarea>
@@ -192,14 +192,14 @@ export default {
     // border: 1px solid black;
 }
 
-input:focus,
-textarea:focus {
-    outline: 4px solid #ff385d55;
+input,
+textarea {
+    // outline: 4px solid #ff385d55;
+    background-color: transparent !important;
 }
 
 .box-card {
-    width: 450px !important;
-
+    min-width: 250px;
     border: 0;
     box-shadow: 2px 2px 12px 6px #fe385c55;
 }
@@ -215,7 +215,7 @@ textarea:focus {
 
     .fa-spinner {
         font-size: 10rem;
-
+        color: $primary;
 
 
     }

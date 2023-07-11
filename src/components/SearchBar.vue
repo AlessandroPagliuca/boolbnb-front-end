@@ -34,7 +34,7 @@
         </div>
         <div v-if="resultAppartments.length === 0" class="mb-3">
             <p class="fw-semibold text-uppercase text-danger">results :</p>
-            <p class="fw-semibold">Not apartments found.</p>
+            <p class="fw-semibold">Not apartments found. </p>
         </div>
 
         <MapComp />
@@ -167,7 +167,7 @@ export default {
 
     .fa-spinner {
         font-size: 10rem;
-
+        color: $primary;
 
 
     }
