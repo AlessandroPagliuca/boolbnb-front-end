@@ -183,8 +183,10 @@ export default {
     mounted() {
         // console.log(this.$router);
         // console.log(this.$route);
-        store.loader = true
+        window.scrollTo(0, 0);
+        store.loader = true;
         this.getApartment();
+
     },
     computed: {
         getImagePath() {
