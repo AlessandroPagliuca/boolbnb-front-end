@@ -49,7 +49,7 @@ const services = [
     icon: "wifi",
   },
   {
-    name: "Private parking",
+    name: "parking",
     icon: "parking",
   },
   {
@@ -61,11 +61,11 @@ const services = [
     icon: "wind",
   },
   {
-    name: "Breakfast included",
+    name: "Breakfast",
     icon: "coffee",
   },
   {
-    name: "Breakfast included",
+    name: "Cleaning",
     icon: "broom",
   },
   {
@@ -89,11 +89,11 @@ const services = [
     icon: "temperature-high",
   },
   {
-    name: "Patio or balcony",
+    name: "balcony",
     icon: "house-chimney-window",
   },
   {
-    name: "Change of sheets and towels everyday",
+    name: "towels",
     icon: "rug",
   },
   {

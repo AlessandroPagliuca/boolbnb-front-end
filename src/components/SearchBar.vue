@@ -14,11 +14,22 @@
         </div>
         <!--ora le icone hanno la funzione della checkbox precedente e quando ci clicchiamo cambia lo stile di esso per far capire all'utente il campo selezionato-->
         <div class="row align-items-center justify-content-start list-unstyled">
-            <div v-for="service in services" :key="service.icon" class="col-2 col-md-1 style-icon py-2">
+            <div v-for="service in services" :key="service.icon" class="col-2 col-md-1 style-icon py-2 position-relative">
                 <i :class="[service.icon === 'instagram fa-rotate-180' ? 'fa-brands fa-' + service.icon : 'fa-solid fa-' + service.icon]"
                     @click="toggleService(service)"
-                    :style="{ backgroundColor: isSelected(service) ? '#FF385C' : '', color: isSelected(service) ? 'white' : '' }"></i>
+                    :style="{ backgroundColor: isSelected(service) ? '#FF385C' : '', color: isSelected(service) ? 'white' : '' }">
+
+                    <div class="drop-icon rounded-3 p-1">
+                        {{ service.name }}
+                    </div>
+
+
+                </i>
+
+
             </div>
+
+
         </div>
 
 
@@ -181,7 +192,20 @@ export default {
 }
 
 .style-icon {
+    .drop-icon {
+        border: 2px solid $primary;
+        position: absolute;
+        top: 32px;
+        left: 10px;
+        opacity: 0;
+        transition: all .5;
+        font-size: 10px;
+        background-color: $primary-subtle;
+        z-index: 10;
+        transition: all .5s;
 
+
+    }
 
     i {
         padding: 5px;
@@ -193,9 +217,18 @@ export default {
         &:hover {
             background-color: $primary;
             color: white;
+
+            .drop-icon {
+                opacity: 1;
+                color: #000000
+            }
         }
 
 
     }
+
+    &:hover {}
+
+
 }
 </style>
