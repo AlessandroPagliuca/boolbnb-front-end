@@ -192,8 +192,8 @@ export default {
     // border: 1px solid black;
 }
 
-input:focus,
-textarea:focus {
+input,
+textarea {
     // outline: 4px solid #ff385d55;
     background-color: transparent !important;
 }
