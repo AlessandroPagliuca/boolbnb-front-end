@@ -32,67 +32,50 @@
 
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-12 col-lg-6">
-                        <div class="description-box mb-5">
-                            <h3>Descrizione</h3>
-                            <p>{{ apartment.description }}</p>
-                        </div>
-                        <!-- <div class="preview card p-3">
-                        <div class="border shadow d-flex justify-content-around rounded-3 mb-5">
-                            <Date />
-                        </div>
-                        <div class="d-flex justify-content-center mb-5">
-                            <div style="width: 70%; height: 3rem;" class="btn btn-primary rounded-5 fw-semibold fs-5" v-for="item in menu" :key="item.routeName">
-                                <router-link :to="{ name: item.routeName }" class="text-white text-decoration-none" active-class="active"> {{item.label }} </router-link>
+                <div class="col-12 col-lg-6">
+                    <div class="description-box mb-5">
+                        <h3>Descrizione</h3>
+                        <p>{{ apartment.description }}</p>
+                    </div>
+
+                    <div class="w-100 card p-4 box-card ">
+                        <div class="container">
+                            <h5>Contatta il proprietario per avere informazioni sulla disponibilità</h5>
+                            <div v-if="success" class="alert alert-success text-start" role="alert">
+                                Messaggio inviato con successo!
+                            </div>
+                            <div class="row">
+                                <form @submit.prevent="sendForm()" class="col-12 text-start">
+                                    <div class="mb-3">
+                                        <input class="form-control border-pink rounded-5"
+                                            :class="{ 'is-invalid': errors.email }" type="text" name="email" id="email"
+                                            placeholder="name@example.com" v-model="email">
+                                        <p v-for="(error, index) in errors.email" :key="`message-error-${index}`"
+                                            class="invalid-feedback">
+                                            {{ error }}
+                                        </p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control border-pink rounded-3"
+                                            :class="{ 'is-invalid': errors.message }" name="message" id="message" cols="30"
+                                            rows="10" placeholder="Message" v-model="message"></textarea>
+                                        <p v-for="(error, index) in errors.message" :key="`message-error-${index}`"
+                                            class="invalid-feedback">
+                                            {{ error }}
+                                        </p>
+                                    </div>
+                                    <button class="btn btn-lg btn-primary text-white" type="submit" :disabled="loading">{{
+                                        loading ?
+                                        'Sending...' : 'Send'
+                                    }}</button>
+                                </form>
                             </div>
                         </div>
-                        <div class="pt-4 px-3 pb-2 border-top border-1 d-flex justify-content-between">
-                            <h6>Totale</h6>
-                            <p>00,00 &euro;</p>
-                        </div>
-                    </div> -->
-
-
-                        <div class="w-100 card p-4 box-card ">
-                            <div class="container">
-                                <h5>Contatta il proprietario per avere informazioni sulla disponibilità</h5>
-                                <div v-if="success" class="alert alert-success text-start" role="alert">
-                                    Messaggio inviato con successo!
-                                </div>
-                                <div class="row">
-                                    <form @submit.prevent="sendForm()" class="col-12 text-start">
-                                        <div class="mb-3">
-                                            <input class="form-control border-pink rounded-5"
-                                                :class="{ 'is-invalid': errors.email }" type="text" name="email" id="email"
-                                                placeholder="name@example.com" v-model="email">
-                                            <p v-for="(error, index) in errors.email" :key="`message-error-${index}`"
-                                                class="invalid-feedback">
-                                                {{ error }}
-                                            </p>
-                                        </div>
-                                        <div class="mb-3">
-                                            <textarea class="form-control border-pink rounded-3"
-                                                :class="{ 'is-invalid': errors.message }" name="message" id="message"
-                                                cols="30" rows="10" placeholder="Message" v-model="message"></textarea>
-                                            <p v-for="(error, index) in errors.message" :key="`message-error-${index}`"
-                                                class="invalid-feedback">
-                                                {{ error }}
-                                            </p>
-                                        </div>
-                                        <button class="btn btn-lg btn-primary text-white" type="submit"
-                                            :disabled="loading">{{
-                                                loading ?
-                                                'Sending...' : 'Send'
-                                            }}</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
