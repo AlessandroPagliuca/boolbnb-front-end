@@ -1,5 +1,8 @@
 <template>
     <div class="min-vh-100 pb-3">
+        <div class="load d-flex align-items-center justify-content-center" v-if="store.loader">
+            <i class="fa-solid fa-spinner fa-spin-pulse"></i>
+        </div>
         <div class="d-flex justify-content-center">
             <div class="border-pink box-input rounded-5 py-2 px-3 my-3 d-flex justify-content-between">
                 <input class="border-0 no-outline" type="text" v-model.lazy="searchQuery"
@@ -77,7 +80,7 @@ export default {
         },
         /**
          * function per filtrare i risultati tramite la ricerca usufruendo
-         * servizi, città, indirizzo 
+         * servizi, città, indirizzo
          */
         async filterAppartments() {
             try {
@@ -106,15 +109,18 @@ export default {
                 this.$router.push({
                     path: '/apartments',
                     query: { q: this.searchQuery },
-                });
+                })
             } catch (error) {
                 console.error('Errore durante la chiamata al backend:', error);
             }
         },
 
         async getData() {
+
             try {
-                const response = await axios.get(`${store.apiURL}/apartments`);
+                const response = await axios.get(`${store.apiURL}/apartments`).finally(() => {
+                    this.store.loader = false
+                });
                 this.apartments = response.data.data;
                 this.resultAppartments = this.apartments; // Imposta gli appartamenti filtrati inizialmente a tutti gli appartamenti
             } catch (error) {
@@ -128,6 +134,7 @@ export default {
         },
     },
     mounted() {
+        store.loader = true
         this.getData();
     },
 };
@@ -149,6 +156,23 @@ export default {
     background-color: $primary;
 }
 
+.load {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    z-index: 10000;
+
+    .fa-spinner {
+        font-size: 10rem;
+
+
+
+    }
+}
+
 .box-input {
     border: 1px solid;
 }
@@ -167,6 +191,8 @@ export default {
             background-color: $primary;
             color: white;
         }
+
+
     }
 }
 </style>

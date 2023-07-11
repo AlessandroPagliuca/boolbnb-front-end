@@ -65,15 +65,16 @@ export default {
     height: 300px;
     // margin-bottom: 50px;
     transition: all .5s;
-    transform: scale(0.9);
+    transform: scale(0.8);
     border: transparent;
     background-color: transparent;
     border: 0px !important;
 
 
     &:hover {
-        transform: scale(1);
+        transform: scale(0.9);
         box-shadow: 0px 0px 12px 6px rgba($primary, $alpha: 0.3);
+        // box-shadow: 8px 8px 12px 5px rgba($primary, $alpha: 0.3);
         border: rgba(0, 0, 0, 0.3);
 
     }
