@@ -1,18 +1,23 @@
 <template>
-    <svg>
-        <g>
-            <path d="M 50,100 A 1,1 0 0 1 50,0" />
-        </g>
-        <g>
-            <path d="M 50,75 A 1,1 0 0 0 50,-25" />
-        </g>
-        <defs>
-            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#FF385C;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#FF9350;stop-opacity:1" />
-            </linearGradient>
-        </defs>
-    </svg>
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -22,74 +27,110 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$transition-duration: 2s;
-$path-length: 157px; // Retrieved using SVG's getTotalLength()
-
-html,
-body {
-    width: 100%;
-    height: 100%;
+* {
+    box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: radial-gradient(#222, #000);
 }
 
-svg {
-    overflow: visible;
+.loader-inner {
     width: 100px;
-    height: 150px;
-
-    g {
-        animation: slide $transition-duration linear infinite;
-
-        &:nth-child(2) {
-            animation-delay: $transition-duration / 4;
-
-            path {
-                animation-delay: $transition-duration / 4;
-                stroke-dasharray: 0px $path-length + 1;
-                stroke-dashoffset: 1px;
-            }
-        }
-    }
-
-    path {
-        stroke: url(#gradient);
-        stroke-width: 20px;
-        stroke-linecap: round;
-        fill: none;
-        stroke-dasharray: 0 $path-length;
-        stroke-dashoffset: 0;
-        animation: escalade $transition-duration cubic-bezier(0.8, 0, 0.2, 1) infinite;
-    }
+    height: 60px;
+    margin: auto;
+    position: absolute;
+    inset: 0;
 }
 
-@keyframes slide {
-    0% {
-        transform: translateY(-50px);
+.loader-line-wrap {
+    animation: spin 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+    width: 100px;
+    height: 50px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform-origin: 50% 100%;
+}
+
+.loader-line {
+    border: 4px solid transparent;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    position: absolute;
+    inset: 0;
+}
+
+.loader-line-wrap:nth-child(1) {
+    animation-delay: -50ms;
+}
+
+.loader-line-wrap:nth-child(2) {
+    animation-delay: -100ms;
+}
+
+.loader-line-wrap:nth-child(3) {
+    animation-delay: -150ms;
+}
+
+.loader-line-wrap:nth-child(4) {
+    animation-delay: -200ms;
+}
+
+.loader-line-wrap:nth-child(5) {
+    animation-delay: -250ms;
+}
+
+.loader-line-wrap:nth-child(1) .loader-line {
+    border-color: #eb4747;
+    height: 90px;
+    width: 90px;
+    top: 7px;
+}
+
+.loader-line-wrap:nth-child(2) .loader-line {
+    border-color: #ebeb47;
+    height: 76px;
+    width: 76px;
+    top: 14px;
+}
+
+.loader-line-wrap:nth-child(3) .loader-line {
+    border-color: #47eb47;
+    height: 62px;
+    width: 62px;
+    top: 21px;
+}
+
+.loader-line-wrap:nth-child(4) .loader-line {
+    border-color: #47ebeb;
+    height: 48px;
+    width: 48px;
+    top: 28px;
+}
+
+.loader-line-wrap:nth-child(5) .loader-line {
+    border-color: #4747eb;
+    height: 34px;
+    width: 34px;
+    top: 35px;
+}
+
+@keyframes spin {
+
+    0%,
+    15% {
+        transform: rotate(0);
     }
 
     100% {
-        transform: translateY(50px);
+        transform: rotate(360deg);
     }
 }
-
-@keyframes escalade {
-    0% {
-        stroke-dasharray: 0 $path-length;
-        stroke-dashoffset: 0;
-    }
-
-    50% {
-        stroke-dasharray: $path-length $path-length;
-        stroke-dashoffset: 0;
-    }
-
-    100% {
-        stroke-dasharray: $path-length $path-length;
-        stroke-dashoffset: -($path-length - 1);
-    }
-}</style>
+</style>
