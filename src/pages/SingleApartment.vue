@@ -1,7 +1,7 @@
 <template>
     <div class="page">
         <div class="load d-flex align-items-center justify-content-center" v-if="store.loader">
-            <LoaderComp/>
+            <LoaderComp />
         </div>
         <div class="row p-5 page" v-if="apartment">
             <div class="col-1 pb-4">
@@ -88,6 +88,7 @@
 import Date from '../components/Date.vue';
 import axios from 'axios';
 import { store } from '../store';
+import LoaderComp from '../components/LoaderComp.vue';
 export default {
     name: 'SingleApartment',
     components: {
