@@ -1,14 +1,11 @@
 <template>
   <div class=" background">
-    <div class="jumbotron position-relative">
-      <img class="img-fluid" src="\img\WhatsApp Image 2023-07-10 at 12.41.47.jpeg" alt="jumbo">
-
-      <div class="position-absolute">
-        <h2 class="text-capitalize display-1 fw-bold t-dark text-center">
-          welcome to <br>
-        </h2>
-        <h1 class="text-uppercase fw-bolde fw-bolder t-dark display-1 ">boolBnB!</h1>
-
+    <div class="dark">
+      <div class="jumbotron ">
+      <div class="d-flex flex-column justify-content-center align-items-center">
+          <h3 class=" display-1 fw-bold t-dark text-center">
+            Welcome to <span class="text-uppercase fw-bolde fw-bolder t-dark display-1">boolbnb</span>
+          </h3>
         <div class="t-button shadow rounded-5"><router-link :to="{ name: 'apartments' }"
             class="text-decoration-none fw-bold d-flex justify-content-between align-items-center">
             <div class="px-2">
@@ -22,13 +19,14 @@
       </div>
 
     </div>
-  </div>
-  <!-- carosello -->
-  <div class="container-fluid background  px-5 ">
-    <h2 class="text-capitalize py-5 fw-bold display-4">featured apartments</h2>
+    </div>
+    <!-- carosello -->
+    <div class="container-fluid background  px-5 ">
+      <h2 class="text-capitalize py-5 fw-bold display-4">featured apartments</h2>
 
-    <Carousel />
+      <Carousel />
 
+    </div>
   </div>
 </template>
 
@@ -62,15 +60,13 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/partials/variables' as *;
 
-@use '../assets/partials/variables' as *;
-
 .background {
   background-color: $primary-subtle;
 
 }
 
-.box-map {
-  overflow: hidden;
+.dark{
+  background-color: black;
 }
 
 .jumbotron {
@@ -80,28 +76,24 @@ export default {
   align-items: center;
   justify-content: center;
   margin-top: 76px;
-  background-color: rgba($color: #000000, $alpha: 1);
+  background-image: url(../../public/img/WhatsApp\ Image\ 2023-07-10\ at\ 12.41.47.jpeg);
+  opacity: 85%;
   z-index: 10;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   .t-dark {
-    text-shadow: 5px 5px 3px rgba($color: #343a40, $alpha: 0.8);
-    color: $primary;
+    text-shadow: 5px 5px 3px #ff3d67a2;
+    color: #ffffff;
   }
 
   .t-button {
-    background-color: transparent;
+    background-color: #ff385d58;
     width: 100%;
     font-size: 8px;
     transition: all .5s;
 
+
     a {
-      color: $primary;
+      color: white;
       transition: all .5s;
     }
 
@@ -165,7 +157,7 @@ export default {
 
 
     &:hover {
-      background-color: $primary;
+      background-color: rgba($color: $primary, $alpha: 0.9);
 
       a {
         color: white;

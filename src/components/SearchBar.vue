@@ -190,6 +190,7 @@ export default {
         background-color: $primary-subtle;
         z-index: 10;
         transition: all .5s;
+        letter-spacing: 3px;
 
 
     }
@@ -218,7 +219,8 @@ export default {
 
             .drop-icon {
                 opacity: 1;
-                color: #000000
+                color: #000000;
+                
             }
 
             .spunta {
