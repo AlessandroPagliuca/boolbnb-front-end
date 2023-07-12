@@ -1,6 +1,7 @@
 <template>
     <div v-if="apartment.visible">
-        <router-link class="text-decoration-none" :to="{ name: 'single-apartment', params: { slug: apartment.slug } }">
+        <router-link class="text-decoration-none" :to="{ name: 'single-apartment', params: { slug: apartment.slug } }"
+            @click="saveView">
             <div class="card border overflow-hidden position-relative">
                 <img class="img-fluid " style="height: 200px;" v-if="apartment.main_img.includes('http')"
                     :src="apartment.main_img" alt="">
@@ -37,6 +38,7 @@
 
 <script>
 import { store } from '../store';
+import axios from 'axios';
 export default {
     name: 'ApartmentCard',
     props: ['apartment'],
@@ -45,6 +47,39 @@ export default {
             store
         }
     },
+    methods: {
+        async saveView() {
+            try {
+                // Ottieni la data corrente
+                const currentDate = new Date().toISOString().split('T')[0];
+
+                // Ottieni l'indirizzo IP dell'utente
+                const response = await axios.get('https://api.ipify.org?format=json');
+                const userIP = response.data.ip;
+
+                const apartmentResponse = await axios.get(`${store.apiURL}/apartment/${this.$route.params.slug}`);
+                const apartmentId = apartmentResponse.data.results.id; // Accedi all'ID dell'appartamento
+
+                // Costruisci l'oggetto dei dati da inviare al server
+                const viewData = {
+                    view_date: currentDate,
+                    address_ip: userIP,
+                    apartment_id: apartmentId,
+                    // ... altri dati che desideri salvare
+                };
+
+                // Invia la richiesta POST al server per salvare i dati
+                await axios.post(`${store.apiURL}/apartment/${this.$route.params.slug}/views?apartment_id=${apartmentId}`, viewData);
+
+                // console.log('Dati salvati correttamente nel database.');
+            } catch (error) {
+                console.error('Errore durante il salvataggio dei dati nel database:', error);
+            }
+        }
+
+
+    },
+
     computed: {
         getImagePath() {
             return store.imgBasePath + this.apartment.main_img;
