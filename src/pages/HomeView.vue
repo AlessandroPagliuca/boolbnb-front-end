@@ -2,23 +2,23 @@
   <div class=" background">
     <div class="dark">
       <div class="jumbotron ">
-      <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex flex-column justify-content-center align-items-center">
           <h3 class=" display-1 fw-bold t-dark text-center">
             Welcome to <span class="text-uppercase fw-bolde fw-bolder t-dark display-1">boolbnb</span>
           </h3>
-        <div class="t-button shadow rounded-5"><router-link :to="{ name: 'apartments' }"
-            class="text-decoration-none fw-bold d-flex justify-content-between align-items-center">
-            <div class="px-2">
-              See all
-              apartments
-            </div>
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </router-link>
+          <div class="t-button shadow rounded-5"><router-link :to="{ name: 'apartments' }"
+              class="text-decoration-none fw-bold d-flex justify-content-between align-items-center">
+              <div class="px-2">
+                See all
+                apartments
+              </div>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </router-link>
+          </div>
+
         </div>
 
       </div>
-
-    </div>
     </div>
     <!-- carosello -->
     <div class="container-fluid background  px-5 ">
@@ -65,7 +65,7 @@ export default {
 
 }
 
-.dark{
+.dark {
   background-color: black;
 }
 
@@ -77,6 +77,7 @@ export default {
   justify-content: center;
   margin-top: 76px;
   background-image: url(../../public/img/WhatsApp\ Image\ 2023-07-10\ at\ 12.41.47.jpeg);
+  background-size: cover;
   opacity: 85%;
   z-index: 10;
 
