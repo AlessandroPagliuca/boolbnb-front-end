@@ -200,7 +200,7 @@ export default {
 @use '../assets/partials/variables' as *;
 
 .page {
-    width: calc(100% - 20px);
+    width: 100%
 }
 
 .background {
