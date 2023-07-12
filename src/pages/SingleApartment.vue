@@ -1,5 +1,5 @@
 <template>
-    <div class="page">
+    <div class="page background min-vh-100">
         <div class="load d-flex align-items-center justify-content-center" v-if="store.loader">
             <LoaderComp />
         </div>
@@ -201,6 +201,7 @@ export default {
 
 .page {
     width: calc(100% - 20px);
+
 }
 
 .background {
