@@ -1,7 +1,7 @@
 <template>
     <div class="min-vh-100 pb-3">
         <div class="load d-flex align-items-center justify-content-center" v-if="store.loader">
-            <LoaderComp/>
+            <LoaderComp />
         </div>
         <div class="d-flex justify-content-center">
             <div class="border-pink box-input rounded-5 py-2 px-2 my-3 d-flex justify-content-between">
@@ -28,30 +28,22 @@
 
                     <div class="spunta"> &#9650;</div>
                 </i>
-
-
             </div>
-
-
         </div>
-
-
-
-
 
         <div v-if="isApartmentsRoute" class="row align-items-center justify-content-start pb-4">
-
             <ApartmentCard v-for="apartment in resultAppartments" :key="apartment.id" :apartment="apartment"
                 class="col-12 col-sm-6 col-lg-4 col-xl-3" />
-
-
         </div>
+
         <div v-if="resultAppartments.length === 0" class="mb-3">
             <p class="fw-semibold text-uppercase text-danger">results :</p>
             <p class="fw-semibold">Not apartments found. </p>
         </div>
 
-        <MapComp />
+
+        <MapComp :apartments="resultAppartments" />
+
     </div>
 </template>
 
@@ -86,27 +78,19 @@ export default {
             const index = this.selectedServices.indexOf(service);
 
             if (index === -1) {
-                this.selectedServices.push(service); // aggiungi il servizio selezionato
+                this.selectedServices.push(service);
             } else {
-                this.selectedServices.splice(index, 1); // rimuovi il servizio deselezionato
+                this.selectedServices.splice(index, 1);
             }
             this.filterAppartments();
         },
         isSelected(service) {
             return this.selectedServices.includes(service);
         },
-        /**
-         * function per filtrare i risultati tramite la ricerca usufruendo
-         * servizi, città, indirizzo
-         */
         async filterAppartments() {
             try {
-                /**
-                 * associo la variabile filteredAppartments = a tutti gli appartamenti esistenti,
-                 * dove poi verrà utilizzata per ritornarci i dati filtrati in base alla propria ricerca
-                 */
                 let resultAppartments = this.apartments;
-                // Filtra gli appartamenti in base alla ricerca
+
                 if (this.searchQuery) {
                     const searchQuery = this.searchQuery.trim().toLowerCase();
                     resultAppartments = resultAppartments.filter(
@@ -115,7 +99,7 @@ export default {
                             apartment.address.toLowerCase().includes(searchQuery)
                     );
                 }
-                // Filtra gli appartamenti in base ai servizi selezionati
+
                 if (this.selectedServices.length > 0) {
                     const selectedServiceNames = this.selectedServices.map(service => service.name);
                     resultAppartments = resultAppartments.filter(apartment => {
@@ -123,24 +107,24 @@ export default {
                         return selectedServiceNames.every(serviceName => apartmentServiceNames.includes(serviceName));
                     });
                 }
+
                 this.resultAppartments = resultAppartments;
                 this.$router.push({
                     path: '/apartments',
                     query: { q: this.searchQuery },
-                })
+                });
             } catch (error) {
                 console.error('Errore durante la chiamata al backend:', error);
             }
         },
 
         async getData() {
-
             try {
                 const response = await axios.get(`${store.apiURL}/apartments`).finally(() => {
-                    this.store.loader = false
+                    this.store.loader = false;
                 });
                 this.apartments = response.data.data;
-                this.resultAppartments = this.apartments; // Imposta gli appartamenti filtrati inizialmente a tutti gli appartamenti
+                this.resultAppartments = this.apartments;
             } catch (error) {
                 console.error(error);
             }
@@ -153,12 +137,10 @@ export default {
     },
     mounted() {
         window.scrollTo(0, 0);
-        store.loader = true
+        store.loader = true;
         this.getData();
     },
 };
-
-
 </script>
 
 
