@@ -100,7 +100,6 @@ export default {
             label: 'Apartments',
             routeName: 'apartments',
             apartment: null,
-            apiUrl: 'http://127.0.0.1:8000/api',
             email: '',
             message: '',
             loading: false,
@@ -131,7 +130,7 @@ export default {
                 };
 
                 axios
-                    .post(`${this.apiUrl}/apartment/${this.$route.params.slug}/messages`, data)
+                    .post(`${store.apiURL}/apartment/${this.$route.params.slug}/messages`, data)
                     .then(response => {
                         this.success = response.data.success;
                         if (this.success) {
@@ -155,7 +154,7 @@ export default {
 
 
         getApartment() {
-            axios.get(`${this.apiUrl}/apartment/${this.$route.params.slug}`).then((res) => {
+            axios.get(`${store.apiURL}/apartment/${this.$route.params.slug}`).then((res) => {
 
                 this.apartment = res.data.results;
                 console.log(res.data.results);
