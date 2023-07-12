@@ -100,7 +100,6 @@ export default {
             label: 'Apartments',
             routeName: 'apartments',
             apartment: null,
-            apiUrl: 'http://127.0.0.1:8000/api',
             email: '',
             message: '',
             loading: false,
@@ -114,40 +113,48 @@ export default {
 
         sendForm() {
             this.loading = true;
-            const data = {
-                email: this.email,
-                message: this.message
-            };
-
-            // pulisco l'array con i messaggi
             this.errors = {};
 
-            axios
-                .post(`${this.apiUrl}/apartment/${this.$route.params.slug}/messages`, data)
-                .then(response => {
-                    this.success = response.data.success;
-                    if (this.success) {
-                        this.errors = response.data.errors;
-                    } else {
-                        // ripulisco i campi di input
-                        this.email = '';
-                        this.message = '';
-                    }
-                })
-                .catch(error => {
-                    // Gestisci l'errore della chiamata API
-                    console.error(error);
-                    // Imposta un messaggio di errore generico
-                    this.errors.generic = 'An error occurred. Please try again later.';
-                })
-                .finally(() => {
-                    this.loading = false;
-                });
+            if (!this.email) {
+                this.errors.email = ['Email is required.'];
+            }
+
+            if (!this.message) {
+                this.errors.message = ['Message is required.'];
+            }
+
+            if (Object.keys(this.errors).length === 0) {
+                const data = {
+                    email: this.email,
+                    message: this.message
+                };
+
+                axios
+                    .post(`${store.apiURL}/apartment/${this.$route.params.slug}/messages`, data)
+                    .then(response => {
+                        this.success = response.data.success;
+                        if (this.success) {
+                            this.errors = response.data.errors;
+                        } else {
+                            this.email = '';
+                            this.message = '';
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        this.errors.generic = 'An error occurred. Please try again later.';
+                    })
+                    .finally(() => {
+                        this.loading = false;
+                    });
+            } else {
+                this.loading = false;
+            }
         },
 
 
         getApartment() {
-            axios.get(`${this.apiUrl}/apartment/${this.$route.params.slug}`).then((res) => {
+            axios.get(`${store.apiURL}/apartment/${this.$route.params.slug}`).then((res) => {
 
                 this.apartment = res.data.results;
                 console.log(res.data.results);
