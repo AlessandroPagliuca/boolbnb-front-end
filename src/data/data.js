@@ -49,7 +49,7 @@ const services = [
     icon: "wifi",
   },
   {
-    name: "parking",
+    name: "Parking",
     icon: "parking",
   },
   {
@@ -85,7 +85,7 @@ const services = [
     icon: "stroopwafel",
   },
   {
-    name: " Heating",
+    name: "Heating",
     icon: "temperature-high",
   },
   {
@@ -97,7 +97,7 @@ const services = [
     icon: "house-chimney-window",
   },
   {
-    name: "towels",
+    name: "Towels",
     icon: "rug",
   },
   {
