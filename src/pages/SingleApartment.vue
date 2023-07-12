@@ -89,7 +89,6 @@ import Date from '../components/Date.vue';
 import LoaderComp from '../components/LoaderComp.vue';
 import axios from 'axios';
 import { store } from '../store';
-import LoaderComp from '../components/LoaderComp.vue';
 export default {
     name: 'SingleApartment',
     components: {
