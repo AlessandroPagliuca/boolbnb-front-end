@@ -5,10 +5,10 @@
         <div class="row text-center d-flex justify-content-center pt-5">
           <div class="col-md-8">
             <h6>
-              Crea l'inserzione per il tuo appartamento.
-              <a href="http://127.0.0.1:8000/" class="fw-semibold d-block p-2">Diventa un membro ufficiale della nostra
-                famiglia.</a>
-              <span class="fw-bold">Sii un Boolbnbneaner</span> .
+              Create the listing for your apartment.
+              <a href="http://127.0.0.1:8000/" class="fw-semibold d-block p-2">Become an official member of our
+                family.</a>
+              <span class="fw-bold">Be a Boolbnbneaner</span>.
             </h6>
           </div>
         </div>

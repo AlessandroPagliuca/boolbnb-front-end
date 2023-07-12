@@ -1,7 +1,7 @@
 <template>
-    <div class="page">
+    <div class="page background min-vh-100">
         <div class="load d-flex align-items-center justify-content-center" v-if="store.loader">
-            <LoaderComp/>
+            <LoaderComp />
         </div>
         <div class="row p-5 page" v-if="apartment">
             <div class="col-1 pb-4">
@@ -201,6 +201,7 @@ export default {
 
 .page {
     width: calc(100% - 20px);
+
 }
 
 .background {
