@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div v-if="isApartmentsRoute" class="row align-items-center justify-content-start pb-4">
+        <div v-if="isApartmentsRoute" class="row align-items-center pb-4">
             <ApartmentCard v-for="apartment in resultAppartments" :key="apartment.id" :apartment="apartment"
                 class="col-12 col-sm-6 col-lg-4 col-xl-3" />
         </div>
@@ -220,7 +220,7 @@ export default {
             .drop-icon {
                 opacity: 1;
                 color: #000000;
-                
+
             }
 
             .spunta {
