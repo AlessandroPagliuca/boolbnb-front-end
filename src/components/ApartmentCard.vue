@@ -1,5 +1,5 @@
 <template>
-    <div v-if="apartment.visible">
+    <div v-if="apartment.visible" class="d-flex justify-content-center align-items-center">
         <router-link class="text-decoration-none" :to="{ name: 'single-apartment', params: { slug: apartment.slug } }"
             @click="saveView">
             <div class="card border overflow-hidden position-relative mb-3">
