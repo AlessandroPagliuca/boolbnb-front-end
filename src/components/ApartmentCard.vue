@@ -1,8 +1,8 @@
 <template>
-    <div v-if="apartment.visible">
+    <div v-if="apartment.visible" class="d-flex justify-content-center align-items-center">
         <router-link class="text-decoration-none" :to="{ name: 'single-apartment', params: { slug: apartment.slug } }"
             @click="saveView">
-            <div class="card border overflow-hidden position-relative">
+            <div class="card border overflow-hidden position-relative mb-3">
                 <img class="img-fluid " style="height: 200px;" v-if="apartment.main_img.includes('http')"
                     :src="apartment.main_img" :alt="apartment.title">
                 <img class="img-fluid " style="height: 200px;" v-else :src="getImagePath" :alt="apartment.title">
@@ -100,16 +100,17 @@ export default {
     height: 300px;
     // margin-bottom: 50px;
     transition: all .5s;
-    transform: scale(0.8);
+    transform: scale(0.9);
     border: transparent;
     background-color: transparent;
     border: 0px !important;
 
 
     &:hover {
-        transform: scale(0.9);
-        box-shadow: 0px 0px 12px 6px rgba($primary, $alpha: 0.3);
-        // box-shadow: 8px 8px 12px 5px rgba($primary, $alpha: 0.3);
+        // transform: scale(0.9);
+        //box-shadow: 0px 0px 12px 6px rgba($primary, $alpha: 0.3);
+        transform: scale(0.9) translate(-5px, -10px);
+        box-shadow: 8px 8px 12px 5px rgba($primary, $alpha: 0.3);
         border: rgba(0, 0, 0, 0.3);
 
     }

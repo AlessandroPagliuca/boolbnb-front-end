@@ -6,13 +6,13 @@
           <h3 class=" display-1 fw-bold t-dark text-center">
             Welcome to <span class="text-uppercase fw-bolde fw-bolder t-dark display-1">boolbnb</span>
           </h3>
-          <div class="t-button shadow rounded-5"><router-link :to="{ name: 'apartments' }"
-              class="text-decoration-none fw-bold d-flex justify-content-between align-items-center">
+          <div class="t-button shadow rounded-3"><router-link :to="{ name: 'apartments' }"
+              class="text-decoration-none fw-bold d-flex align-items-center">
               <div class="px-2">
                 See all
                 apartments
               </div>
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-plane"></i>
             </router-link>
           </div>
 
@@ -87,8 +87,8 @@ export default {
   }
 
   .t-button {
-    background-color: #ff385d58;
-    width: 100%;
+    background-color: #ff385dbc;
+    width: 75%;
     font-size: 8px;
     transition: all .5s;
 
@@ -106,53 +106,49 @@ export default {
 
     @media screen {
       padding: .5rem;
-      width: 75%;
+      // width: 75%;
       font-size: 1rem;
     }
 
     @media (min-width: 676px) {
       padding: 1rem;
-      width: 70%;
+      width: 50%;
       font-size: 18px;
-
 
       i {
         font-size: 24px;
       }
-
     }
 
     @media (min-width:1024px) {
       padding: 1rem;
-      width: 70%;
+      width: 42%;
       font-size: 24px;
-
 
       i {
         font-size: 36px;
       }
-
     }
 
-    @keyframes bounce {
+    @keyframes rotate-plane {
       0% {
-        transform: translateY(0);
+        transform: translate(0px) rotate(0);
       }
 
       25% {
-        transform: translateY(-10px);
+        transform: translate(75px) rotate(0deg);
       }
 
       50% {
-        transform: translateY(0);
+        transform: translate(75px) rotate(180deg);
       }
 
       75% {
-        transform: translateY(-5px);
+        transform: translate(0px) rotate(180deg);
       }
 
       100% {
-        transform: translateY(0);
+        transform: translate(0px) rotate(360deg);
       }
     }
 
@@ -164,12 +160,13 @@ export default {
         color: white;
       }
 
-      .fa-magnifying-glass {
-        animation: bounce 0.5s .75s infinite;
+      .fa-plane {
+        animation: rotate-plane 3s linear infinite;
       }
 
     }
-
   }
+
+
 }
 </style>

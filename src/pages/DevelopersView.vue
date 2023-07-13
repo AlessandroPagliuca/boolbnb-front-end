@@ -82,15 +82,16 @@ img {
   height: 440px;
   margin-bottom: 50px;
   transition: all .5s;
-  transform: scale(0.9);
   border: transparent;
+  //transform: scale(0.9);
   background-color: transparent;
 
   &:hover {
-    transform: scale(1);
+    //transform: scale(1);
     box-shadow: 0px 0px 12px 6px rgba($primary, $alpha: 0.3);
-    // box-shadow: 8px 8px 12px 5px rgba($primary, $alpha: 0.3);
     border: rgba(0, 0, 0, 0.3);
+    transform: translate(-5px, -10px);
+    box-shadow: 8px 8px 12px 5px rgba($primary, $alpha: 0.3);
 
   }
 }
