@@ -41,15 +41,16 @@ export default {
             });
 
             this.apartments.forEach(apartment => {
-                const markerElement = document.createElement('div');
-                markerElement.className = 'custom-marker';
-                markerElement.innerHTML = '<i class="fa-solid fa-house text-white bg-dark p-2 rounded-circle"></i>';
+                if (apartment.visible == 1) {
+                    const markerElement = document.createElement('div');
+                    markerElement.className = 'custom-marker';
+                    markerElement.innerHTML = '<i class="fa-solid fa-house text-white bg-dark p-2 rounded-circle"></i>';
 
-                const marker = new tt.Marker({
-                    element: markerElement,
-                }).setLngLat([apartment.longitude, apartment.latitude]).addTo(map);
+                    const marker = new tt.Marker({
+                        element: markerElement,
+                    }).setLngLat([apartment.longitude, apartment.latitude]).addTo(map);
 
-                const popupContent = `
+                    const popupContent = `
                  <a class="text-black text-decoration-none no-outline" href="apartment/${apartment.slug}">
                 <strong>Title:</strong> ${apartment.title}<br/>
                 <strong>Price:</strong> ${apartment.price} &euro;<br/>
@@ -57,8 +58,9 @@ export default {
                 </a>
                 `;
 
-                const popup = new tt.Popup({ anchor: 'top' }).setHTML(popupContent);
-                marker.setPopup(popup);
+                    const popup = new tt.Popup({ anchor: 'top' }).setHTML(popupContent);
+                    marker.setPopup(popup);
+                }
             });
         },
 
