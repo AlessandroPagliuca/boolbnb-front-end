@@ -53,7 +53,7 @@
                                     <form @submit.prevent="sendForm()" class="col-12 text-start">
                                         <div class="pb-3">
                                             <input class="form-control border-pink rounded-5"
-                                                :class="{ 'is-invalid': errors.email }" type="text" name="email" id="email"
+                                                :class="{ 'is-invalid': errors.email }" type="email" name="email" id="email"
                                                 placeholder="name@example.com" v-model="email">
                                             <p v-for="(error, index) in errors.email" :key="`message-error-${index}`"
                                                 class="invalid-feedback">
