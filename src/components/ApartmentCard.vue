@@ -4,7 +4,7 @@
             @click="saveView">
             <div class="card border overflow-hidden position-relative">
                 <img class="img-fluid " style="height: 200px;" v-if="apartment.main_img.includes('http')"
-                    :src="apartment.main_img" alt="">
+                    :src="apartment.main_img" :alt="apartment.title">
                 <img class="img-fluid " style="height: 200px;" v-else :src="getImagePath" :alt="apartment.title">
                 <span class="price fw-bold position-absolute p-2 badge ">{{ apartment.price }}
                     &euro;</span>

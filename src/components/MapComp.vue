@@ -28,6 +28,7 @@ export default {
         },
     },
     methods: {
+
         createMap() {
             const mapContainer = this.$refs.mapRef;
             mapContainer.innerHTML = '';
@@ -49,19 +50,24 @@ export default {
                 }).setLngLat([apartment.longitude, apartment.latitude]).addTo(map);
 
                 const popupContent = `
-          <a class="text-black text-decoration-none no-outline" href="apartment/${apartment.slug}">
-            <strong>Title:</strong> ${apartment.title}<br/>
-            <strong>Price:</strong> ${apartment.price} &euro;<br/>
-            <img class="img-fluid" v-if="apartment.main_img.includes('http')" src="${apartment.main_img}" alt="${apartment.title}">
-            <img class="img-fluid" v-else :src="getImagePath" :alt="apartment.title">
-          </a>
-        `;
+                 <a class="text-black text-decoration-none no-outline" href="apartment/${apartment.slug}">
+                <strong>Title:</strong> ${apartment.title}<br/>
+                <strong>Price:</strong> ${apartment.price} &euro;<br/>
+                <img class="img-fluid" src="${apartment.main_img.includes('http') ? apartment.main_img : store.imgBasePath + apartment.main_img}" alt="${apartment.title}">
+                </a>
+                `;
 
                 const popup = new tt.Popup({ anchor: 'top' }).setHTML(popupContent);
                 marker.setPopup(popup);
             });
         },
+
     },
+    computed: {
+        getImagePath() {
+            return store.imgBasePath + this.apartment.main_img;
+        }
+    }
 };
 </script>
   
