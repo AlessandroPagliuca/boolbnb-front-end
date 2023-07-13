@@ -90,6 +90,8 @@ export default {
         async filterAppartments() {
             try {
                 let resultAppartments = this.apartments;
+                // Filtra solo gli appartamenti visibili
+                resultAppartments = resultAppartments.filter(apartment => apartment.visible === 1);
 
                 if (this.searchQuery) {
                     const searchQuery = this.searchQuery.trim().toLowerCase();
