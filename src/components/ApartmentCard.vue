@@ -109,6 +109,7 @@ export default {
     &:hover {
         transform: scale(0.9);
         box-shadow: 0px 0px 12px 6px rgba($primary, $alpha: 0.3);
+        // transform: translate(-5px, -10px);
         // box-shadow: 8px 8px 12px 5px rgba($primary, $alpha: 0.3);
         border: rgba(0, 0, 0, 0.3);
 

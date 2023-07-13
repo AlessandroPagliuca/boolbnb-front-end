@@ -6,7 +6,7 @@
           <h3 class=" display-1 fw-bold t-dark text-center">
             Welcome to <span class="text-uppercase fw-bolde fw-bolder t-dark display-1">boolbnb</span>
           </h3>
-          <div class="t-button shadow rounded-5"><router-link :to="{ name: 'apartments' }"
+          <div class="t-button shadow rounded-3"><router-link :to="{ name: 'apartments' }"
               class="text-decoration-none fw-bold d-flex justify-content-between align-items-center">
               <div class="px-2">
                 See all
@@ -87,8 +87,8 @@ export default {
   }
 
   .t-button {
-    background-color: #ff385d58;
-    width: 100%;
+    background-color: #ff385dbc;
+    width: 50%;
     font-size: 8px;
     transition: all .5s;
 
@@ -106,32 +106,28 @@ export default {
 
     @media screen {
       padding: .5rem;
-      width: 75%;
+      // width: 75%;
       font-size: 1rem;
     }
 
     @media (min-width: 676px) {
       padding: 1rem;
-      width: 70%;
+      // width: 70%;
       font-size: 18px;
-
 
       i {
         font-size: 24px;
       }
-
     }
 
     @media (min-width:1024px) {
       padding: 1rem;
-      width: 70%;
+      width: 40%;
       font-size: 24px;
-
 
       i {
         font-size: 36px;
       }
-
     }
 
     @keyframes bounce {
