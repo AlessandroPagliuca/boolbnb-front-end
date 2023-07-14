@@ -4,12 +4,12 @@
             <LoaderComp />
         </div>
         <div class="row p-5 page" v-if="apartment">
-            <div class="col-1 pb-4">
+            <div class="col-12 col-md-1 pb-4">
                 <router-link :to="{ name: routeName }" class="btn btn-primary text-white rounded-5">
                     <i class="fa-solid fa-arrow-left"></i>
                 </router-link>
             </div>
-            <div class="col-11">
+            <div class="col-12 col-md-11">
                 <div class="row">
                     <div class="col-12 col-lg-6 pb-5">
                         <div class="image-box pb-3">
