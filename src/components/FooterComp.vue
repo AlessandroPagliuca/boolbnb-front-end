@@ -6,7 +6,8 @@
           <div class="col-md-8">
             <h6>
               Create the listing for your apartment.
-              <a href="http://127.0.0.1:8000/" class="fw-semibold d-block p-2">Become an official member of our
+              <a href="http://127.0.0.1:8000/" class="fw-semibold d-block link-hover-francesco p-2">Become an official
+                member of our
                 family.</a>
               <span class="fw-bold">Be a Boolbnbneaner</span>.
             </h6>
@@ -16,8 +17,9 @@
         <section class="text-center pb-3">
           <div class="d-flex justify-content-around">
             <a class="nav-item" v-for="item in menu" :key="item.routeName">
-              <router-link :to="{ name: item.routeName }" class="nav-link mx-2" active-class="active"> Team 3 with
-                <span>&hearts;</span> </router-link>
+              <router-link :to="{ name: item.routeName }" class="nav-link mx-2 link-hover-francesco"
+                active-class="active"> Team 3 with
+                <span class="cuore"><i class=" fa-solid fa-heart fa-beat fa-bounce"></i></span> </router-link>
             </a>
             <div>
               <a href="" class="text-white pe-4">
@@ -85,11 +87,12 @@ span {
   color: $primary;
 }
 
-.d-block {
+.link-hover-francesco {
   transition: all .5s;
 
   &:hover {
     color: $primary;
+
   }
 }
 </style>

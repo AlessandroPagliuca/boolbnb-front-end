@@ -5,7 +5,7 @@
                 style="background-color: #222222">
                 <div class="">
                     <img src="/logo-boolbnb.png" alt="logo">
-                    <a class="navbar-brand text-first-primary fw-bold" href="#">BOOLBNB</a>
+                    <a class="navbar-brand text-first-primary fw-bold" href="">BOOLBNB</a>
                 </div>
                 <input id="menu-toggle" type="checkbox" />
                 <label class='menu-button-container pe-3' for="menu-toggle">

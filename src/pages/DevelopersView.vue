@@ -2,7 +2,9 @@
   <div class="background">
 
     <div class="container">
-      <h2 class="text-center fw-bold display-2 t-padding text-team">Conosci meglio il nostro Team!</h2>
+      <h2 class="text-center fw-semibold display-2 t-padding text-team">This is the <span
+          class="text-decoration-underline">Legendary</span>
+        Team!</h2>
       <div class="row align-items-stretch">
         <div v-for="(team, index) in teams" :key="index" class="col-12 col-md-6 col-lg-4">
           <div class="cards-container d-flex justify-content-center">

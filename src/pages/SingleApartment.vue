@@ -17,13 +17,16 @@
                                 alt="">
                             <img class="img-fluid" v-else :src="getImagePath" :alt="apartment.title">
                         </div>
-                        <div class="pb-4">
-                            <p>{{ apartment.title }}
+                        <div>
+                            <p>{{ apartment.title }} {{ apartment.square_meters }}mq.
                                 <br> {{ apartment.city }} {{ apartment.country }} {{ apartment.address }}
                                 <br> {{ apartment.rooms }} <i class="fa-solid fa-person-shelter"></i> | {{ apartment.beds }}
                                 <i class="fa-solid fa-bed"></i> | {{ apartment.bathrooms }} <i
                                     class="fa-solid fa-toilet"></i>
                             </p>
+                        </div>
+                        <div>
+                            <p class="text-pink p-2 d-inline-block rounded-5">{{ apartment.price }}&euro; for night</p>
                         </div>
                         <div class="services-box">
                             <h4>Servizi</h4>
@@ -247,6 +250,11 @@ a:hover {
     .fa-arrow-left {
         animation: slide1 1s ease-in-out infinite;
     }
+}
+
+.text-pink {
+    color: white;
+    background-color: $primary;
 }
 
 @keyframes slide1 {
