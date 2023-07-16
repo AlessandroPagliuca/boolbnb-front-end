@@ -29,7 +29,7 @@
                             <p class="text-pink p-2 d-inline-block rounded-5">{{ apartment.price }}&euro; for night</p>
                         </div>
                         <div class="services-box">
-                            <h4>Servizi</h4>
+                            <h4>Services</h4>
                             <div class="row pt-1 pb-3">
                                 <div v-for="(service, index) in apartment.services" class="col-6"><i
                                         v-if="service.icon == 'instagram fa-rotate-180'"
@@ -42,13 +42,13 @@
 
                     <div class="col-12 col-lg-6">
                         <div class="description-box pb-5">
-                            <h3>Descrizione</h3>
+                            <h3>Description</h3>
                             <p>{{ apartment.description }}</p>
                         </div>
 
                         <div class="w-75 card p-4 box-card ">
                             <div class="container">
-                                <h5>Contatta il proprietario per avere informazioni sulla disponibilità</h5>
+                                <h5>Contact the owner for information on availability</h5>
                                 <div v-if="success" class="alert alert-success text-start" role="alert">
                                     Messaggio inviato con successo!
                                 </div>
